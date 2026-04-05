@@ -216,10 +216,11 @@ export default function SchedulePage() {
                                             <button onClick={() => setStep(2)} className="p-2 hover:bg-muted rounded-full text-foreground/40"><ChevronLeft className="w-5 h-5" /></button>
                                             <h2 className="text-2xl font-bold text-[#064e3b]">Confirm Details</h2>
                                         </div>
-                                        <form onSubmit={handleSubmit} className="space-y-6">
+                                        <form id="global-scheduling-form" onSubmit={handleSubmit} className="space-y-6">
                                             <div className="space-y-2">
-                                                <label className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 ml-2">Author Name</label>
+                                                <label htmlFor="schedule-author-name" className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 ml-2">Author Name</label>
                                                 <input
+                                                    id="schedule-author-name"
                                                     required
                                                     type="text"
                                                     placeholder="Your Name"
@@ -229,8 +230,9 @@ export default function SchedulePage() {
                                                 />
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 ml-2">Email</label>
+                                                <label htmlFor="schedule-author-email" className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 ml-2">Email</label>
                                                 <input
+                                                    id="schedule-author-email"
                                                     required
                                                     type="email"
                                                     placeholder="email@example.com"
@@ -246,6 +248,8 @@ export default function SchedulePage() {
                                                 </div>
                                             </div>
                                             <button
+                                                id="submit-schedule"
+                                                type="submit"
                                                 disabled={isLoading}
                                                 className="btn-primary w-full py-5 flex items-center justify-center gap-3 text-lg"
                                             >

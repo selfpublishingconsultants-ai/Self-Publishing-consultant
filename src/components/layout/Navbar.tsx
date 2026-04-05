@@ -47,8 +47,13 @@ export default function Navbar() {
                 </div>
 
                 {/* Mobile Toggle */}
-                <button className="lg:hidden text-foreground hover:text-primary transition-colors" onClick={() => setIsOpen(!isOpen)}>
-                    {isOpen ? <X size={24} /> : <Menu size={24} />}
+                <button 
+                    className="lg:hidden text-foreground hover:text-primary transition-colors p-2 -mr-2" 
+                    onClick={() => setIsOpen(!isOpen)}
+                    aria-label={isOpen ? "Close menu" : "Open menu"}
+                    aria-expanded={isOpen}
+                >
+                    {isOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
                 </button>
             </div>
 

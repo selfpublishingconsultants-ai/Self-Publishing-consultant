@@ -4,10 +4,11 @@ import React from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, BookOpen, CheckCircle2, Globe, Shield, Zap, TrendingUp, Quote } from "lucide-react";
+import Image from "next/image";
 
-export const Hero = () => {
-    const [transactions, setTransactions] = React.useState<any[]>([]);
-    const [isLoading, setIsLoading] = React.useState(true);
+export const Hero = ({ initialTransactions = [] }: { initialTransactions?: any[] }) => {
+    const [transactions, setTransactions] = React.useState<any[]>(initialTransactions);
+    const [isLoading, setIsLoading] = React.useState(initialTransactions.length === 0);
     const [lastSync, setLastSync] = React.useState<string>("");
 
     const [quoteIndex, setQuoteIndex] = React.useState(0);
@@ -28,7 +29,10 @@ export const Hero = () => {
     }, []);
 
     React.useEffect(() => {
+        // Only fetch if we really have no data
         const fetchRealReports = async () => {
+            if (transactions.length > 0 && !isLoading) return;
+
             try {
                 const response = await fetch('https://www.googleapis.com/books/v1/volumes?q=subject:fiction+bestseller&maxResults=40&orderBy=relevance&printType=books');
                 const data = await response.json();
@@ -55,7 +59,13 @@ export const Hero = () => {
             }
         };
 
-        fetchRealReports();
+        if (initialTransactions.length === 0) {
+            fetchRealReports();
+        } else {
+            const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            setLastSync(currentTime);
+        }
+        
         const syncInterval = setInterval(fetchRealReports, 300000);
 
         const rotateInterval = setInterval(() => {
@@ -70,7 +80,7 @@ export const Hero = () => {
             clearInterval(syncInterval);
             clearInterval(rotateInterval);
         };
-    }, []);
+    }, [initialTransactions]);
 
     return (
         <section className="relative pt-32 pb-20 overflow-hidden">
@@ -132,10 +142,13 @@ export const Hero = () => {
                 >
                     {/* Creative illustration of kid sitting on the box edge */}
                     <div className="absolute -top-[120px] md:-top-[200px] right-[10%] md:right-[15%] w-[150px] md:w-[250px] aspect-square z-20 pointer-events-none hover:rotate-2 transition-transform duration-500 origin-bottom">
-                        <img 
+                        <Image 
                             src="/images/kid-sitting.png" 
                             alt="Kid sitting on the box" 
+                            width={250}
+                            height={250}
                             className="w-full h-full object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.3)]"
+                            priority
                         />
                     </div>
 

@@ -101,11 +101,12 @@ export const TicketModal = ({ isOpen, onClose }: TicketModalProps) => {
                                     <p className="text-[#064e3b]/40 font-medium">Your issue has been logged into our support grid. <br /> A technician will respond within 4 hours.</p>
                                 </motion.div>
                             ) : (
-                                <form onSubmit={handleSubmit} className="space-y-6">
+                                <form id="support-ticket-form" onSubmit={handleSubmit} className="space-y-6">
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="space-y-2">
-                                            <label className="text-[10px] font-black uppercase tracking-widest text-[#064e3b]/40 ml-2">Name</label>
+                                            <label htmlFor="ticket-author-name" className="text-[10px] font-black uppercase tracking-widest text-[#064e3b]/40 ml-2">Name</label>
                                             <input
+                                                id="ticket-author-name"
                                                 required
                                                 type="text"
                                                 value={formData.name}
@@ -115,8 +116,9 @@ export const TicketModal = ({ isOpen, onClose }: TicketModalProps) => {
                                             />
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-[10px] font-black uppercase tracking-widest text-[#064e3b]/40 ml-2">Email</label>
+                                            <label htmlFor="ticket-author-email" className="text-[10px] font-black uppercase tracking-widest text-[#064e3b]/40 ml-2">Email</label>
                                             <input
+                                                id="ticket-author-email"
                                                 required
                                                 type="email"
                                                 value={formData.email}
@@ -129,8 +131,9 @@ export const TicketModal = ({ isOpen, onClose }: TicketModalProps) => {
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="space-y-2">
-                                            <label className="text-[10px] font-black uppercase tracking-widest text-[#064e3b]/40 ml-2">Category</label>
+                                            <label htmlFor="ticket-category-select" className="text-[10px] font-black uppercase tracking-widest text-[#064e3b]/40 ml-2">Category</label>
                                             <select
+                                                id="ticket-category-select"
                                                 value={formData.category}
                                                 onChange={(e) => setFormData({ ...formData, category: e.target.value })}
                                                 className="w-full bg-muted border border-border px-6 py-4 rounded-2xl outline-none focus:border-primary transition-colors text-foreground font-medium appearance-none"
@@ -143,8 +146,9 @@ export const TicketModal = ({ isOpen, onClose }: TicketModalProps) => {
                                             </select>
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-[10px] font-black uppercase tracking-widest text-[#064e3b]/40 ml-2">Urgency</label>
+                                            <label htmlFor="ticket-urgency-select" className="text-[10px] font-black uppercase tracking-widest text-[#064e3b]/40 ml-2">Urgency</label>
                                             <select
+                                                id="ticket-urgency-select"
                                                 value={formData.priority}
                                                 onChange={(e) => setFormData({ ...formData, priority: e.target.value })}
                                                 className="w-full bg-muted border border-border px-6 py-4 rounded-2xl outline-none focus:border-primary transition-colors text-foreground font-medium appearance-none"
@@ -158,8 +162,9 @@ export const TicketModal = ({ isOpen, onClose }: TicketModalProps) => {
                                     </div>
 
                                     <div className="space-y-2">
-                                        <label className="text-[10px] font-black uppercase tracking-widest text-[#064e3b]/40 ml-2">Subject</label>
+                                        <label htmlFor="ticket-subject" className="text-[10px] font-black uppercase tracking-widest text-[#064e3b]/40 ml-2">Subject</label>
                                         <input
+                                            id="ticket-subject"
                                             required
                                             type="text"
                                             value={formData.subject}
@@ -170,8 +175,9 @@ export const TicketModal = ({ isOpen, onClose }: TicketModalProps) => {
                                     </div>
 
                                     <div className="space-y-2">
-                                        <label className="text-[10px] font-black uppercase tracking-widest text-[#064e3b]/40 ml-2">System Logs / Issue Description</label>
+                                        <label htmlFor="ticket-issue-description" className="text-[10px] font-black uppercase tracking-widest text-[#064e3b]/40 ml-2">System Logs / Issue Description</label>
                                         <textarea
+                                            id="ticket-issue-description"
                                             required
                                             value={formData.message}
                                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -182,6 +188,8 @@ export const TicketModal = ({ isOpen, onClose }: TicketModalProps) => {
                                     </div>
 
                                     <button
+                                        id="submit-ticket"
+                                        type="submit"
                                         disabled={status === "submitting"}
                                         className="btn-primary w-full flex items-center justify-center gap-3 py-5 text-lg group disabled:opacity-50"
                                     >

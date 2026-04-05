@@ -125,21 +125,21 @@ export default function Contact() {
                                     </button>
                                 </motion.div>
                             ) : (
-                                <form className="space-y-8 relative z-10" onSubmit={handleSubmit}>
+                                <form id="strategic-inquiry-form" className="space-y-8 relative z-10" onSubmit={handleSubmit}>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div className="space-y-3">
-                                            <label className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Full Identity</label>
-                                            <input name="name" type="text" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all text-sm font-medium placeholder:text-white/20" placeholder="e.g. Alexander Knight" required />
+                                            <label htmlFor="author-name" className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Full Identity</label>
+                                            <input id="author-name" name="name" type="text" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all text-sm font-medium placeholder:text-white/20" placeholder="e.g. Alexander Knight" required />
                                         </div>
                                         <div className="space-y-3">
-                                            <label className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Email Portal</label>
-                                            <input name="email" type="email" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all text-sm font-medium placeholder:text-white/20" placeholder="name@domain.com" required />
+                                            <label htmlFor="author-email" className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Email Portal</label>
+                                            <input id="author-email" name="email" type="email" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all text-sm font-medium placeholder:text-white/20" placeholder="name@domain.com" required />
                                         </div>
                                     </div>
                                     <div className="space-y-3">
-                                        <label className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Architecture Path</label>
+                                        <label htmlFor="project-architecture" className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Architecture Path</label>
                                         <div className="relative">
-                                            <select name="genre" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all text-sm font-medium cursor-pointer appearance-none">
+                                            <select id="project-architecture" name="genre" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all text-sm font-medium cursor-pointer appearance-none">
                                                 <option className="bg-primary">Manuscript Assessment</option>
                                                 <option className="bg-primary">Full Global Distribution</option>
                                                 <option className="bg-primary">Executive Branding & Cover</option>
@@ -152,10 +152,12 @@ export default function Contact() {
                                         </div>
                                     </div>
                                     <div className="space-y-3">
-                                        <label className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Project Brief</label>
-                                        <textarea name="message" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all h-40 resize-none text-sm font-medium placeholder:text-white/20" placeholder="Detail your book's genre, word count, and mission objectives..." required></textarea>
+                                        <label htmlFor="project-brief" className="block text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">Project Brief</label>
+                                        <textarea id="project-brief" name="message" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-secondary/50 focus:bg-white/10 transition-all h-40 resize-none text-sm font-medium placeholder:text-white/20" placeholder="Detail your book's genre, word count, and mission objectives..." required></textarea>
                                     </div>
                                     <button 
+                                        type="submit"
+                                        id="submit-contact"
                                         disabled={status === "loading"}
                                         className="w-full py-6 bg-secondary text-primary font-black tracking-[0.2em] uppercase text-xs rounded-2xl shadow-xl shadow-secondary/10 hover:bg-white transition-all flex items-center justify-center gap-4 active:scale-95 group"
                                     >

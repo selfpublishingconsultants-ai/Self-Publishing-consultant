@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Shield, Target, TrendingUp, Award } from "lucide-react";
 
@@ -38,7 +39,7 @@ export const WhyChooseUs = () => {
                                     className="bg-white/60 backdrop-blur-md border border-primary/10 rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
                                 >
                                     <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 text-primary">
-                                        <feature.icon className="w-6 h-6" />
+                                        <feature.icon className="w-6 h-6" aria-hidden="true" />
                                     </div>
                                     <h4 className="text-lg font-bold text-primary mb-2 line-clamp-1">{feature.title}</h4>
                                     <p className="text-foreground/70 font-medium leading-relaxed text-sm">
@@ -58,9 +59,11 @@ export const WhyChooseUs = () => {
                         className="relative group mr-[-40px]"
                     >
                         <div className="relative z-10 transition-transform duration-700 group-hover:scale-105">
-                            <img 
+                            <Image 
                                 src="/images/whychoseus.png" 
-                                alt="Why Choose Us"
+                                alt="Author sitting with books, representing professional publishing support"
+                                width={800}
+                                height={600}
                                 className="w-full h-auto drop-shadow-[0_20px_50px_rgba(20,184,166,0.3)]"
                             />
                         </div>

@@ -1,7 +1,17 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Calculator, DollarSign, Info, TrendingUp } from "lucide-react";
+import { 
+    Calculator, 
+    DollarSign, 
+    Info, 
+    TrendingUp, 
+    CheckCircle2, 
+    ChevronRight,
+    Search,
+    BookOpen,
+    Layers
+} from "lucide-react";
 
 export const RoyaltyCalculator = () => {
     const [price, setPrice] = useState<number | "">(19.99);
@@ -16,7 +26,6 @@ export const RoyaltyCalculator = () => {
     });
 
     useEffect(() => {
-        // Basic KDP-style logic
         const pCount = Number(pageCount) || 0;
         const lPrice = Number(price) || 0;
 
@@ -37,106 +46,144 @@ export const RoyaltyCalculator = () => {
     }, [price, pageCount, interiorType, isExpanded]);
 
     return (
-        <div className="bento-card bg-white/40 backdrop-blur-sm border-primary/10 h-full flex flex-col">
-            <div className="flex items-center gap-4 mb-8">
-                <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center text-[#064e3b] border border-secondary/20">
-                    <Calculator className="w-6 h-6" />
-                </div>
-                <div>
-                    <h3 className="text-2xl font-bold tracking-tight text-[#064e3b]">Royalty Calculator</h3>
-                    <p className="text-[#064e3b]/40 text-sm font-medium">Estimate your earnings per sale</p>
-                </div>
-            </div>
-
-            <div className="space-y-6 flex-grow">
-                <div className="grid grid-cols-2 gap-4">
-                    <div>
-                        <label className="block text-xs font-bold uppercase tracking-widest text-foreground/40 mb-2">
-                            List Price ($)
-                        </label>
-                        <input
-                            type="number"
-                            value={price}
-                            onChange={(e) => setPrice(e.target.value === "" ? "" : Number(e.target.value))}
-                            step="0.01"
-                            className="w-full bg-white/50 border border-border px-4 py-3 rounded-xl text-lg font-bold outline-none focus:border-primary transition-colors text-primary"
-                        />
+        <div className="w-full bg-white rounded-[32px] md:rounded-[48px] shadow-2xl border border-[#064e3b]/10 p-6 md:p-10 lg:p-12">
+            <div className="flex flex-col gap-10">
+                
+                {/* Header */}
+                <div className="flex items-center gap-5">
+                    <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary border border-secondary/20 shadow-sm transition-all hover:scale-110">
+                        <Calculator className="w-7 h-7" />
                     </div>
                     <div>
-                        <label className="block text-xs font-bold uppercase tracking-widest text-foreground/40 mb-2">
-                            Page Count
-                        </label>
-                        <input
-                            type="number"
-                            value={pageCount}
-                            onChange={(e) => setPageCount(e.target.value === "" ? "" : Number(e.target.value))}
-                            className="w-full bg-white/50 border border-border px-4 py-3 rounded-xl text-lg font-bold outline-none focus:border-primary transition-colors text-primary"
-                        />
+                        <h3 className="text-2xl font-black tracking-tight text-[#064e3b]">Royalty Engine</h3>
+                        <p className="text-[#064e3b]/40 text-sm font-bold uppercase tracking-widest">Net Revenue Estimator</p>
                     </div>
                 </div>
 
-                <div>
-                    <label className="block text-xs font-bold uppercase tracking-widest text-foreground/40 mb-4">
-                        Interior Type
-                    </label>
-                    <div className="grid grid-cols-2 gap-3">
-                        <button
-                            onClick={() => setInteriorType("bw")}
-                            className={`px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-widest transition-all border ${interiorType === "bw"
-                                ? "bg-primary text-white border-primary shadow-lg shadow-primary/20"
-                                : "bg-white/50 text-foreground/60 border-border hover:border-primary/30"
-                                }`}
-                        >
-                            Black & White
-                        </button>
-                        <button
-                            onClick={() => setInteriorType("color")}
-                            className={`px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-widest transition-all border ${interiorType === "color"
-                                ? "bg-primary text-white border-primary shadow-lg shadow-primary/20"
-                                : "bg-white/50 text-foreground/60 border-border hover:border-primary/30"
-                                }`}
-                        >
-                            Standard Color
-                        </button>
-                    </div>
-                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+                    
+                    {/* Inputs */}
+                    <div className="space-y-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div className="p-6 bg-[#064e3b]/5 rounded-2xl border border-transparent focus-within:border-[#064e3b]/20 transition-all shadow-sm">
+                                <label className="block text-[10px] font-black uppercase text-[#064e3b]/40 mb-3 tracking-widest leading-none">List Price ($)</label>
+                                <div className="flex items-center gap-2">
+                                    <span className="text-[#064e3b]/30 font-bold text-xl">$</span>
+                                    <input 
+                                        type="number" 
+                                        value={price} 
+                                        placeholder="0.00"
+                                        onChange={(e) => setPrice(e.target.value === "" ? "" : Number(e.target.value))}
+                                        className="w-full bg-transparent border-none p-0 font-black text-2xl text-[#064e3b] focus:ring-0 outline-none"
+                                    />
+                                </div>
+                            </div>
+                            <div className="p-6 bg-[#064e3b]/5 rounded-2xl border border-transparent focus-within:border-[#064e3b]/20 transition-all shadow-sm">
+                                <label className="block text-[10px] font-black uppercase text-[#064e3b]/40 mb-3 tracking-widest leading-none">Page Count</label>
+                                <div className="flex items-center gap-2">
+                                    <input 
+                                        type="number" 
+                                        value={pageCount} 
+                                        placeholder="0"
+                                        onChange={(e) => setPageCount(e.target.value === "" ? "" : Number(e.target.value))}
+                                        className="w-full bg-transparent border-none p-0 font-black text-2xl text-[#064e3b] focus:ring-0 outline-none"
+                                    />
+                                </div>
+                            </div>
+                        </div>
 
-                <div className="flex items-center justify-between p-4 bg-muted/50 rounded-2xl border border-border">
-                    <div>
-                        <p className="font-bold text-[#064e3b]">Expanded Distribution</p>
-                        <p className="text-xs text-foreground/40 font-medium">Lower royalty, wider reach</p>
-                    </div>
-                    <button
-                        onClick={() => setIsExpanded(!isExpanded)}
-                        className={`w-14 h-8 rounded-full transition-all relative ${isExpanded ? "bg-primary" : "bg-foreground/10"
+                        <div>
+                            <label className="block text-[10px] font-black uppercase text-[#064e3b]/40 mb-4 tracking-widest">Production Level</label>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                {[
+                                    { id: "bw", label: "Black & White", icon: Search },
+                                    { id: "color", label: "Standard Color", icon: Layers }
+                                ].map((type) => (
+                                    <button
+                                        key={type.id}
+                                        onClick={() => setInteriorType(type.id as any)}
+                                        className={`p-5 rounded-2xl border-2 transition-all flex items-center gap-4 group ${
+                                            interiorType === type.id 
+                                            ? "bg-[#064e3b] border-transparent text-white shadow-xl" 
+                                            : "bg-white border-[#064e3b]/10 text-[#064e3b]/40 hover:border-secondary/30"
+                                        }`}
+                                    >
+                                        <type.icon className={`w-5 h-5 shrink-0 transition-transform group-hover:scale-110 ${interiorType === type.id ? 'text-secondary' : 'text-[#064e3b]/20'}`} />
+                                        <span className="font-black text-xs uppercase tracking-widest">{type.label}</span>
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div 
+                            onClick={() => setIsExpanded(!isExpanded)}
+                            className={`p-6 rounded-2xl border-2 transition-all cursor-pointer flex items-center justify-between group ${
+                                isExpanded ? "bg-[#064e3b] border-transparent text-white shadow-2xl" : "bg-white border-[#064e3b]/10 text-[#064e3b]/40"
                             }`}
-                    >
-                        <div className={`absolute top-1 w-6 h-6 bg-white rounded-full transition-all ${isExpanded ? "left-7" : "left-1"
-                            }`} />
-                    </button>
+                        >
+                            <div className="flex items-center gap-4">
+                                <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${isExpanded ? 'bg-white/10' : 'bg-[#064e3b]/5'}`}>
+                                    <BookOpen className="w-5 h-5" />
+                                </div>
+                                <div>
+                                    <p className="text-[10px] font-black uppercase tracking-widest mb-0.5 leading-none">Expanded Distribution</p>
+                                    <p className={`text-[9px] font-bold ${isExpanded ? 'text-white/60' : 'text-[#064e3b]/30'}`}>Reach worldwide retailers (40% royalty cap)</p>
+                                </div>
+                            </div>
+                            <div className={`w-8 h-8 rounded-full border-2 flex items-center justify-center shrink-0 shadow-inner transition-all ${isExpanded ? 'bg-secondary border-white/20' : 'border-[#064e3b]/10'}`}>
+                                {isExpanded && <CheckCircle2 className="w-4 h-4 text-white" />}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Results Centerpiece */}
+                    <div className="bg-[#064e3b] rounded-[32px] md:rounded-[40px] p-8 md:p-12 text-white relative overflow-hidden flex flex-col justify-between shadow-[0_32px_64px_-12px_rgba(6,78,59,0.4)] min-h-[400px]">
+                        <div className="absolute top-0 right-0 w-48 h-48 bg-secondary/20 blur-[80px] -translate-y-1/2 translate-x-1/2" />
+                        <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary/10 blur-[80px] translate-y-1/2 -translate-x-1/2" />
+                        
+                        <div className="relative z-10 mb-12 text-center lg:text-left">
+                            <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/30 mb-5 border-l-2 border-secondary pl-3 inline-block">Estimated Net Payout</p>
+                            <h2 className="text-8xl md:text-9xl font-black tracking-tighter leading-none mb-8 text-white tabular-nums drop-shadow-2xl">
+                                ${results.royalty}
+                            </h2>
+                            <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/10 rounded-2xl backdrop-blur-3xl border border-white/5 shadow-2xl transition-transform hover:scale-105">
+                                <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest">Net Profit Margin:</span>
+                                <span className="text-2xl font-black text-secondary">{results.margin}%</span>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col gap-5 relative z-10">
+                            {[
+                                { label: "Printing Load", val: `$${results.printingCost}`, desc: "Factory production overhead", icon: TrendingUp },
+                                { label: "Author Royalty", val: `$${results.royalty}`, desc: "Final liquid earnings per unit", icon: CheckCircle2 }
+                            ].map((stat, i) => (
+                                <div key={i} className="flex items-center gap-6 p-5 rounded-2xl bg-white/5 border border-white/5 group transition-all duration-300 hover:bg-white/10 hover:border-white/10 hover:translate-x-2">
+                                    <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-white/20 shrink-0 border border-white/5 shadow-inner transition-all group-hover:bg-secondary/20 group-hover:text-secondary group-hover:border-secondary/20 group-hover:scale-110">
+                                        <stat.icon className="w-7 h-7" />
+                                    </div>
+                                    <div>
+                                        <p className="text-[9px] font-black uppercase tracking-widest text-white/30 mb-1">{stat.label}</p>
+                                        <p className="text-3xl font-black tracking-tight leading-none text-white tabular-nums">{stat.val}</p>
+                                        <p className="text-[8px] font-bold text-white/10 uppercase tracking-tighter mt-1 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">{stat.desc}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
 
-                <div className="grid grid-cols-3 gap-4 mt-8">
-                    <div className="p-4 bg-white border border-border rounded-2xl text-center">
-                        <p className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 mb-1">Print Cost</p>
-                        <p className="text-xl font-black text-[#064e3b]">${results.printingCost}</p>
+                {/* Audit Footer */}
+                <div className="bg-[#064e3b]/2 border-2 border-[#064e3b]/5 p-8 rounded-[32px] flex gap-6 items-start shadow-inner transition-all hover:bg-[#064e3b]/5">
+                    <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary shrink-0 border border-secondary/20 shadow-sm">
+                        <Info className="w-6 h-6" />
                     </div>
-                    <div className="p-4 bg-primary/5 border border-primary/20 rounded-2xl text-center">
-                        <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-1">Your Royalty</p>
-                        <p className="text-2xl font-black text-primary">${results.royalty}</p>
-                    </div>
-                    <div className="p-4 bg-secondary/5 border border-secondary/20 rounded-2xl text-center">
-                        <p className="text-[10px] font-bold uppercase tracking-widest text-secondary mb-1">Net Margin</p>
-                        <p className="text-xl font-black text-[#064e3b]">{results.margin}%</p>
+                    <div>
+                        <p className="text-xs font-black uppercase text-[#064e3b]/40 tracking-widest mb-2 leading-none underline decoration-secondary decoration-2 underline-offset-4 decoration-dotted">Strategic Financial Audit</p>
+                        <p className="text-xs text-[#064e3b]/70 font-bold leading-relaxed italic tracking-tight">
+                            Calculations are based on 2026 Amazon KDP / IngramSpark benchmarking. Note that "Expanded Distribution" accounts for middle-man wholesale cuts. Values rounded to 2 decimal places for institutional accuracy.
+                        </p>
                     </div>
                 </div>
-            </div>
-
-            <div className="mt-8 p-4 bg-primary/5 rounded-xl flex gap-3 items-start">
-                <Info className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <p className="text-[11px] text-[#064e3b]/60 leading-relaxed font-medium">
-                    Estimates are based on standard industry rates. Final royalties may vary depending on the specific retail platform and regional taxes.
-                </p>
             </div>
         </div>
     );

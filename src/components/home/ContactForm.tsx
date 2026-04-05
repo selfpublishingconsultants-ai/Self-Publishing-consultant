@@ -109,11 +109,12 @@ export const ContactForm = () => {
                                     </button>
                                 </div>
                             ) : (
-                                <form className="space-y-6 relative z-10" onSubmit={handleSubmit}>
+                                <form id="global-publication-inquiry" className="space-y-6 relative z-10" onSubmit={handleSubmit}>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="space-y-2">
-                                            <label className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Full Name</label>
+                                            <label htmlFor="author-full-name" className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Full Name</label>
                                             <input 
+                                                id="author-full-name"
                                                 type="text" 
                                                 name="name"
                                                 required
@@ -122,8 +123,9 @@ export const ContactForm = () => {
                                             />
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Email Address</label>
+                                            <label htmlFor="author-email-address" className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Email Address</label>
                                             <input 
+                                                id="author-email-address"
                                                 type="email" 
                                                 name="email"
                                                 required
@@ -134,8 +136,9 @@ export const ContactForm = () => {
                                     </div>
                                     
                                     <div className="space-y-2">
-                                        <label className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Manuscript Topic / Genre</label>
+                                        <label htmlFor="book-genre-selection" className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Manuscript Topic / Genre</label>
                                         <select 
+                                            id="book-genre-selection"
                                             name="genre"
                                             className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-secondary transition-all font-medium text-white appearance-none"
                                         >
@@ -148,8 +151,9 @@ export const ContactForm = () => {
                                     </div>
 
                                     <div className="space-y-2">
-                                        <label className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Your Message</label>
+                                        <label htmlFor="project-initial-message" className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Your Message</label>
                                         <textarea 
+                                            id="project-initial-message"
                                             name="message"
                                             required
                                             className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-secondary transition-all font-medium text-white placeholder:text-white/20 h-40 resize-none" 
@@ -158,6 +162,7 @@ export const ContactForm = () => {
                                     </div>
                                     
                                     <button 
+                                        id="submit-global-inquiry"
                                         type="submit" 
                                         disabled={status === "loading"}
                                         className="w-full bg-secondary text-primary font-black py-5 rounded-xl flex items-center justify-center gap-3 hover:bg-white transition-all transform hover:scale-[1.02] shadow-xl disabled:opacity-50 disabled:cursor-not-allowed group uppercase tracking-widest text-xs"

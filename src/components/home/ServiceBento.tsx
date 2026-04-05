@@ -9,8 +9,8 @@ import Link from "next/link";
 import Image from "next/image";
 const services = [
     {
-        title: "Manuscript Assessment",
-        description: "Deep structural analysis identifying pacing, tone, and market fit using private machine learning.",
+        title: "Strategic Manuscript Assessment",
+        description: "A comprehensive structural analysis of your manuscript to identify pacing, tone, and market positioning with a clear roadmap for publication.",
         icon: FileSearch,
         size: "col-span-1 md:col-span-2",
         bgColor: "bg-primary/5",
@@ -18,8 +18,8 @@ const services = [
         slug: "developmental-editing"
     },
     {
-        title: "Editorial Excellence",
-        description: "Multi-layered proofing by industry legends and AI cross-verification for pristine prose.",
+        title: "Developmental & Line Editing",
+        description: "Multi-layered editorial refinement by industry veterans ensuring your prose is pristine, engaging, and ready for global competition.",
         icon: PenTool,
         size: "col-span-1",
         bgColor: "bg-secondary/10",
@@ -27,8 +27,8 @@ const services = [
         slug: "substantive-editing"
     },
     {
-        title: "Cover & Layout",
-        description: "Cinematic cover design and multi-format layout for digital and luxury print editions.",
+        title: "Genre-Aligned Cover Design",
+        description: "Cinematic book cover design and author branding including legacy logos and multi-format layouts for luxury print editions.",
         icon: Palette,
         size: "col-span-1",
         bgColor: "bg-accent/5",
@@ -36,8 +36,8 @@ const services = [
         slug: "cover-design"
     },
     {
-        title: "Global Distribution",
-        description: "Proprietary pipelines to 40,000+ retail nodes across 180+ countries instantly.",
+        title: "Global Book Distribution Strategy",
+        description: "Enterprise-grade pipelines linking your book to 40,000+ retail nodes across 180+ countries via KDP and IngramSpark.",
         icon: Globe,
         size: "col-span-1 md:col-span-2",
         bgColor: "bg-primary/10",
@@ -45,8 +45,8 @@ const services = [
         slug: "print-on-demand-setup"
     },
     {
-        title: "Metadata Pulse",
-        description: "Dynamic SEO optimization and categorization driven by real-time catalog data.",
+        title: "Metadata & SEO Pulse",
+        description: "Dynamic metadata optimization and category targeting designed to increase organic discoverability on Amazon and Google.",
         icon: Zap,
         size: "col-span-1",
         bgColor: "bg-secondary/5",
@@ -54,8 +54,8 @@ const services = [
         slug: "metadata-optimization"
     },
     {
-        title: "Rights Guard",
-        description: "Enterprise-grade protection and instant licensing modules for global scale.",
+        title: "Copyright & Rights Guard",
+        description: "Secure your intellectual property with official copyright registration and instant global licensing modules for scalability.",
         icon: ShieldCheck,
         size: "col-span-1",
         bgColor: "bg-primary/5",
@@ -64,7 +64,7 @@ const services = [
     },
     {
         title: "Royalty Intelligence",
-        description: "Real-time sales tracking and automated royalty distribution with transparent reporting.",
+        description: "Integrated sales tracking and automated royalty accounting with transparent, real-time reporting for independent authors.",
         icon: Library,
         size: "col-span-1",
         bgColor: "bg-primary/5",
@@ -72,8 +72,8 @@ const services = [
         slug: "royalty-accounting"
     },
     {
-        title: "Marketing Velocity",
-        description: "High-impact launch strategies and AI-driven ad targeting to maximize reach.",
+        title: "Book Marketing & Launch Velocity",
+        description: "High-impact launch strategies and AI-driven ad targeting across Amazon and Meta to maximize reader reach and conversion.",
         icon: Activity,
         size: "col-span-1 md:col-span-2",
         bgColor: "bg-secondary/10",
@@ -81,8 +81,8 @@ const services = [
         slug: "book-launch-strategy"
     },
     {
-        title: "Format Mastering",
-        description: "Universal formatting for Kindle, ePub, and high-end paperback/hardcover formats.",
+        title: "Professional KDP Formatting",
+        description: "Universal formatting optimized for Kindle, ePub, and high-end paperback/hardcover formats with 100% QA pass rate.",
         icon: Layout,
         size: "col-span-1",
         bgColor: "bg-accent/5",

@@ -18,6 +18,14 @@ import {
 
 const tools = [
     {
+        title: "Profit Planner",
+        description: "Institutional-grade 2026 ROI forecasting for professional book launches.",
+        href: "/tools/roi-calculator",
+        icon: Calculator,
+        color: "text-emerald-500",
+        bg: "bg-emerald-500/5"
+    },
+    {
         title: "ISBN Barcode",
         description: "Generate print-ready ISBN-13 barcodes for your book cover.",
         href: "/tools/isbn-barcode-generator",
