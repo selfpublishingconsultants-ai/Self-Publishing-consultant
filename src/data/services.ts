@@ -315,7 +315,7 @@ export const services: Service[] = [
         title: "Warehousing & Fulfillment",
         description: "Storage and direct shipping solutions for authors selling physical stock.",
         category: "Production & Distribution Services",
-        icon: Boxes,
+        iconName: "Boxes",
         features: ["Inventory tracking", "Direct-to-consumer", "Bulk shipping"]
     },
 
