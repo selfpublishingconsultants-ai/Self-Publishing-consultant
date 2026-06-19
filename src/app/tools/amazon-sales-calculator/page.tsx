@@ -16,8 +16,8 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-    title: "Amazon BSR Sales Calculator | Estimated Daily Book Sales",
-    description: "Convert any Amazon Best Seller Rank (BSR) into estimated daily and monthly sales. Essential market research tool for authors and publishers.",
+    title: "Amazon BSR Calculator - Book Sales Estimator Tool",
+    description: "Convert Amazon Best Seller Rank to daily and monthly sales estimates. Essential market research tool for authors planning strategies.",
     alternates: {
         canonical: "/tools/amazon-sales-calculator",
     },

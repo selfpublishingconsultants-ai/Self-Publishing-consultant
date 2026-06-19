@@ -30,11 +30,11 @@ const SITE_NAME = "Self Publishing Consultant";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Self Publishing Consultant | From Manuscript to Global Bookshelf",
-    template: "%s | Self Publishing Consultant",
+    default: "Self-Publishing Consultant - Expert Book Services",
+    template: "%s | Self-Publishing Consultant",
   },
   description:
-    "Expert self-publishing consulting services — manuscript assessment, professional editing, book cover design, interior formatting, global distribution via KDP & IngramSpark, and full book launch strategy. Retain 100% of your rights.",
+    "Expert self-publishing consulting services for independent authors. Professional editing, cover design, interior formatting, global KDP & IngramSpark distribution, and complete book launch strategy guidance.",
   keywords: [
     "self publishing consultant",
     "book publishing services",
@@ -80,9 +80,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: "Self Publishing Consultant | From Manuscript to Global Bookshelf",
+    title: "Self-Publishing Consultant - Expert Book Services",
     description:
-      "End-to-end self-publishing services. Professional editing, stunning cover design, global distribution, and powerful book launch strategy — all under one roof.",
+      "Expert self-publishing consulting services for independent authors. Professional editing, cover design, interior formatting, global KDP & IngramSpark distribution, and complete book launch strategy guidance.",
     images: [
       {
         url: "/og-image.png",
@@ -96,9 +96,9 @@ export const metadata: Metadata = {
   /* ── Twitter / X Card ───────────────────────────────────────────────── */
   twitter: {
     card: "summary_large_image",
-    title: "Self Publishing Consultant | From Manuscript to Global Bookshelf",
+    title: "Self-Publishing Consultant - Expert Book Services",
     description:
-      "End-to-end self-publishing services. Professional editing, cover design, global distribution, and book launch strategy.",
+      "Expert self-publishing consulting services for independent authors. Professional editing, cover design, interior formatting, global KDP & IngramSpark distribution, and complete book launch strategy guidance.",
     images: ["/og-image.png"],
     creator: "@selfpubconsult",
   },

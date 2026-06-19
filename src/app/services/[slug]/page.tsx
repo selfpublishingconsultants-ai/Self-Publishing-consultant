@@ -30,8 +30,8 @@ export async function generateMetadata(
   const service = services.find((s) => s.slug === slug);
   if (!service) return {};
 
-  const title = `${service.title} | Professional Self-Publishing Services`;
-  const description = `${service.description} Trusted by independent authors worldwide. Retain 100% of your rights. Book a free consultation today.`;
+  const title = service.metaTitle || `${service.title} | Professional Self-Publishing Services`;
+  const description = service.metaDescription || `${service.description} Trusted by independent authors worldwide. Retain 100% of your rights. Book a free consultation today.`;
   const url = `/services/${service.slug}`;
 
   return {

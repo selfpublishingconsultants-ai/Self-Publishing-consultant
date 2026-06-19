@@ -1,8 +1,10 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Our Team | Expert Publishing Consultants & Designers",
-    description: "Meet the experts behind your book's success. Our team of editors, designers, and marketing strategists are dedicated to your publishing journey.",
+    title: {
+        absolute: "Our Team - Editors, Designers & Marketing Experts",
+    },
+    description: "Professional editors, cover designers, and marketing strategists dedicated to your publishing success. Meet the team behind bestselling book launches for independent authors.",
     alternates: {
         canonical: "/team",
     },

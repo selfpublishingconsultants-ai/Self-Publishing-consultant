@@ -1,8 +1,10 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Terms & Conditions | Professional Service Agreement",
-    description: "Our terms and conditions for publishing services. We ensure authors retain 100% rights and receive professional-grade production standards.",
+    title: {
+        absolute: "Terms & Conditions - Publishing Service Agreement",
+    },
+    description: "Our terms and conditions outline professional standards for publishing services. Authors retain 100% rights with guaranteed professional-grade production quality.",
     alternates: {
         canonical: "/terms",
     },

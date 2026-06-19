@@ -15,24 +15,26 @@ import { AnswerBlock } from "@/components/layout/AnswerBlock";
 
 /* ── Page-level Metadata ──────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Publishing Services | Complete A-to-Z Self-Publishing Solutions",
+  title: {
+    absolute: "Publishing Services - Complete Self-Publishing Solutions",
+  },
   description:
-    "24 professional publishing services across 6 phases — from manuscript assessment and developmental editing to global distribution on KDP & IngramSpark and full book marketing. Retain 100% of your rights.",
+    "24 professional self-publishing services covering all phases. From manuscript assessment and editing to cover design, formatting, distribution on KDP & IngramSpark, and full marketing strategies.",
   alternates: {
     canonical: "/services",
   },
   openGraph: {
-    title: "Self-Publishing Services | Complete A-to-Z Solutions",
+    title: "Publishing Services - Complete Self-Publishing Solutions",
     description:
-      "Every service your book needs, in the exact order you need them. Editing, cover design, formatting, global distribution, and book marketing — all under one roof.",
+      "24 professional self-publishing services covering all phases. From manuscript assessment and editing to cover design, formatting, distribution on KDP & IngramSpark, and full marketing strategies.",
     url: "/services",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Self-Publishing Services | 24 Expert Services Across 6 Phases",
+    title: "Publishing Services - Complete Self-Publishing Solutions",
     description:
-      "From first word to global bookshelf — professional editing, design, distribution, and marketing for independent authors.",
+      "24 professional self-publishing services covering all phases. From manuscript assessment and editing to cover design, formatting, distribution on KDP & IngramSpark, and full marketing strategies.",
   },
 };
 

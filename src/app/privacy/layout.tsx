@@ -1,8 +1,10 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Privacy Policy | Your Data Security Matters",
-    description: "Read our privacy policy to understand how we protect your intellectual property and personal information during the publishing process.",
+    title: {
+        absolute: "Privacy Policy - Your Data Security Protection",
+    },
+    description: "Our privacy policy outlines how we protect your intellectual property and personal information throughout the publishing process and beyond.",
     alternates: {
         canonical: "/privacy",
     },

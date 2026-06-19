@@ -1,8 +1,10 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "About Us | Our Mission & Self-Publishing Expertise",
-    description: "Learn about the team behind Self Publishing Consultant. We help independent authors navigate the complex world of KDP, IngramSpark, and global distribution.",
+    title: {
+        absolute: "About Us - Publishing Experts & Creative Team",
+    },
+    description: "Meet the publishing professionals at Self Publishing Consultant. Our team combines editorial expertise, design excellence, and marketing strategy to launch your book successfully.",
     alternates: {
         canonical: "/about",
     },

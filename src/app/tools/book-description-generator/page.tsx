@@ -16,8 +16,8 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-    title: "Amazon Book Description Generator | KDP HTML Formatter",
-    description: "Create professional, conversion-optimized Amazon book descriptions with proper HTML formatting. Stand out in the Kindle store.",
+    title: "Book Description Generator - KDP HTML Formatter Tool",
+    description: "Create conversion-optimized Amazon book descriptions with proper HTML formatting. Stand out in Kindle store search with compelling product copy.",
     alternates: {
         canonical: "/tools/book-description-generator",
     },

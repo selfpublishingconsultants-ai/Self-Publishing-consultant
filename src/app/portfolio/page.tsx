@@ -6,11 +6,13 @@ import { successes } from "@/data/successes";
 import { JsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Bestseller Portfolio | Case Studies in Publishing Excellence",
-  description: "Explore our commercial successes. From NYT #1 Bestsellers to award-winning cover designs, see how we engineer market leaders.",
+  title: {
+    absolute: "Case Studies - Bestselling Books & Publishing Success",
+  },
+  description: "Explore our portfolio of published successes. From New York Times bestsellers to award-winning book designs. Real case studies demonstrating our expertise in author publishing.",
   openGraph: {
-    title: "Verified Success Stories | Self-Publishing Consultant",
-    description: "Real-world data and results from our high-velocity book launches.",
+    title: "Case Studies - Bestselling Books & Publishing Success",
+    description: "Explore our portfolio of published successes. From New York Times bestsellers to award-winning book designs. Real case studies demonstrating our expertise in author publishing.",
     images: ["/og-portfolio.png"],
   },
 };

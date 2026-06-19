@@ -5,14 +5,16 @@ import { blogPosts } from "@/data/blog";
 import { JsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Publishing Intelligence | Self-Publishing Blog & Industry Data",
-  description: "High-level tactics, industry data, and editorial methodologies for the modern global author. Explore case studies on Amazon Ads, KDP formatting, and global rights.",
+  title: {
+    absolute: "Self-Publishing Blog - Industry Data & Tactics",
+  },
+  description: "Self-publishing strategies, industry insights, and editorial guidance for modern authors. Case studies on Amazon advertising, KDP optimization, and book marketing.",
   alternates: {
     canonical: "/blog",
   },
   openGraph: {
-    title: "Self-Publishing Intelligence | SPC Blog",
-    description: "Expert insights into keyword architecture, global distribution, and bestseller launches.",
+    title: "Self-Publishing Blog - Industry Data & Tactics",
+    description: "Self-publishing strategies, industry insights, and editorial guidance for modern authors. Case studies on Amazon advertising, KDP optimization, and book marketing.",
     images: ["/og-blog.png"],
   },
 };

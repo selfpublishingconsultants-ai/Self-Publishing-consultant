@@ -18,8 +18,10 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Free Author Tools | Self-Publishing Calculators & Generators",
-    description: "A comprehensive suite of free tools for self-publishing authors. ISBN generators, royalty calculators, sales estimators, and more.",
+    title: {
+        absolute: "Free Publishing Tools - Calculators for Authors",
+    },
+    description: "Free self-publishing tools and calculators for authors. ISBN generators, royalty calculators, Amazon sales estimators, and other helpful publishing resources.",
     alternates: {
         canonical: "/tools",
     },

@@ -1,8 +1,10 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Pricing & Packages | Transparent Self-Publishing Costs",
-    description: "Compare our self-publishing packages. From essential formatting to full-service bestseller launches, we have a plan for every author's budget.",
+    title: {
+        absolute: "Self-Publishing Pricing - Affordable Service Packages",
+    },
+    description: "Transparent, affordable self-publishing packages for every budget. Choose from essential services like formatting to complete full-service launches with marketing and distribution included.",
     alternates: {
         canonical: "/pricing",
     },

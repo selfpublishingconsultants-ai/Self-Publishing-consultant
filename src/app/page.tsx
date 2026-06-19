@@ -11,6 +11,10 @@ import { JsonLd } from "@/components/JsonLd";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  title: {
+    absolute: "Self-Publishing Consultant - Expert Book Services",
+  },
+  description: "Expert self-publishing consulting services for independent authors. Professional editing, cover design, interior formatting, global KDP & IngramSpark distribution, and complete book launch strategy guidance.",
   alternates: {
     canonical: "/",
   },
