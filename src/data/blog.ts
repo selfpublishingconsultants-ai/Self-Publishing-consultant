@@ -17,6 +17,20 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    category: "Publishing",
+    title: "What Professional Publishing Services Really Include (And Why Authors in the USA, UAE, Qatar and KSA Are Switching to Them)",
+    excerpt: "Discover expert professional publishing services for authors in the USA, UAE, Qatar & KSA. From editing to global distribution — publish with confidence.",
+    date: "Jun 30, 2026",
+    readTime: "9 min read",
+    image: "/images/professional-publishing-services.jpg",
+    iconSlug: "globe",
+    slug: "what-professional-publishing-services-include",
+    author: {
+        name: "M. Ali",
+        avatar: "https://i.pravatar.cc/150?u=ali"
+    }
+  },
+  {
     category: "Pillar Guides",
     title: "The Ultimate Guide to US State-Level Taxes for Indie Authors (2026)",
     excerpt: "Navigating physical vs. digital sales tax, economic nexus for indie authors, and KDP's tax interview matrix — the definitive US-specific guide no other publisher covers.",
