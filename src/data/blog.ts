@@ -18,6 +18,20 @@ export type BlogPost = {
 export const blogPosts: BlogPost[] = [
   {
     category: "Publishing",
+    title: "Developmental Editing Services for Authors: A Complete Guide to a Stronger Book",
+    excerpt: "Struggling with your manuscript? Get expert developmental editing services for authors in USA, UAE, Qatar & KSA. Free consultation available.",
+    date: "Jul 2, 2026",
+    readTime: "8 min read",
+    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=800&auto=format&fit=crop",
+    iconSlug: "book-open",
+    slug: "developmental-editing-services-for-authors",
+    author: {
+        name: "M. Ali",
+        avatar: "https://i.pravatar.cc/150?u=ali"
+    }
+  },
+  {
+    category: "Publishing",
     title: "What Professional Publishing Services Really Include (And Why Authors in the USA, UAE, Qatar and KSA Are Switching to Them)",
     excerpt: "Discover expert professional publishing services for authors in the USA, UAE, Qatar & KSA. From editing to global distribution — publish with confidence.",
     date: "Jun 30, 2026",
