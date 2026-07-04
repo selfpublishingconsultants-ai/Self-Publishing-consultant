@@ -2,6 +2,26 @@
 
 import nodemailer from "nodemailer";
 
+async function sendToGoogleSheet(data: Record<string, string>) {
+    const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+    if (!webhookUrl) {
+        console.warn("GOOGLE_SHEETS_WEBHOOK_URL is not set. Skipping Google Sheets integration.");
+        return;
+    }
+    
+    try {
+        await fetch(webhookUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+    } catch (error) {
+        console.error("Failed to send data to Google Sheets:", error);
+    }
+}
+
 export async function scheduleMeeting(formData: {
     name: string;
     email: string;
@@ -52,9 +72,11 @@ export async function scheduleMeeting(formData: {
     try {
         if (!process.env.EMAIL_USER || process.env.EMAIL_USER === "your-email@gmail.com") {
             console.log("[DEV MODE] Simulated sending email locally. Payload:", { name, email, date, time, project });
+            await sendToGoogleSheet({ type: "Meeting", name, email, date, time, project });
             return { success: true };
         }
         await transporter.sendMail(mailOptions);
+        await sendToGoogleSheet({ type: "Meeting", name, email, date, time, project });
         return { success: true };
     } catch (error) {
         console.error("Email send error:", error);
@@ -114,9 +136,11 @@ export async function submitTicket(formData: {
     try {
         if (!process.env.EMAIL_USER || process.env.EMAIL_USER === "your-email@gmail.com") {
             console.log("[DEV MODE] Simulated ingesting support ticket locally. Payload:", { name, email, category, priority, subject, message });
+            await sendToGoogleSheet({ type: "Ticket", name, email, category, priority, subject, message });
             return { success: true };
         }
         await transporter.sendMail(mailOptions);
+        await sendToGoogleSheet({ type: "Ticket", name, email, category, priority, subject, message });
         return { success: true };
     } catch (error) {
         console.error("Support Ticket error:", error);
@@ -189,9 +213,11 @@ export async function submitContactForm(formData: {
     try {
         if (!process.env.EMAIL_USER || process.env.EMAIL_USER === "your-email@gmail.com") {
             console.log("[DEV MODE] Simulated sending contact inquiry locally. Payload:", { name, email, genre, message });
+            await sendToGoogleSheet({ type: "Contact Form", name, email, genre, message });
             return { success: true };
         }
         await transporter.sendMail(mailOptions);
+        await sendToGoogleSheet({ type: "Contact Form", name, email, genre, message });
         return { success: true };
     } catch (error) {
         console.error("Contact Form error:", error);
