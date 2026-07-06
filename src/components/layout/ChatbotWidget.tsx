@@ -13,19 +13,48 @@ export default function ChatbotWidget() {
     setIsMounted(true);
   }, []);
 
+  // Lock background scrolling completely when chat is open
+  useEffect(() => {
+    if (isOpen) {
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+    } else {
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   if (!isMounted) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end">
-      {/* ── Chat Window Overlay ── */}
+    <>
+      {/* ── Backdrop Overlay ── */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 30 }}
-            transition={{ type: "spring", duration: 0.4, bounce: 0.15 }}
-            className="mb-4 w-[380px] h-[580px] max-w-[calc(100vw-2rem)] max-h-[calc(100vh-8rem)] rounded-2xl border border-slate-200/60 bg-white/95 shadow-[0_20px_50px_rgba(0,0,0,0.15)] backdrop-blur-md overflow-hidden flex flex-col"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            onClick={() => setIsOpen(false)}
+            className="fixed inset-0 z-[9998] bg-slate-900/40 backdrop-blur-sm"
+          />
+        )}
+      </AnimatePresence>
+
+      {/* ── Chat Window Side Panel ── */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed top-0 right-0 z-[9999] w-full md:w-[50vw] h-[100dvh] bg-white shadow-2xl flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div className="px-5 py-4 bg-signature-gradient text-white flex items-center justify-between shadow-sm">
@@ -57,7 +86,7 @@ export default function ChatbotWidget() {
             <div className="flex-1 bg-slate-50 relative">
               <iframe
                 src="https://chatbot-iota-six-35.vercel.app/widget"
-                className="w-full h-full border-none"
+                className="absolute inset-0 w-full h-full border-none"
                 title="Self Publishing Consultant Chatbot"
                 allow="clipboard-read; clipboard-write"
               />
@@ -67,44 +96,29 @@ export default function ChatbotWidget() {
       </AnimatePresence>
 
       {/* ── Floating Launcher Button ── */}
-      <motion.button
-        onClick={() => setIsOpen(!isOpen)}
-        whileHover={{ scale: 1.08 }}
-        whileTap={{ scale: 0.95 }}
-        className="w-14 h-14 rounded-full bg-signature-gradient text-white flex items-center justify-center shadow-[0_4px_20px_rgba(6,78,59,0.35)] hover:shadow-[0_8px_30px_rgba(6,78,59,0.5)] transition-all cursor-pointer relative focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2"
-        aria-label={isOpen ? "Close chatbot" : "Open chatbot"}
-        aria-expanded={isOpen}
-      >
-        <AnimatePresence mode="wait">
-          {isOpen ? (
-            <motion.div
-              key="close"
-              initial={{ rotate: -90, opacity: 0 }}
-              animate={{ rotate: 0, opacity: 1 }}
-              exit={{ rotate: 90, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              <X size={24} />
-            </motion.div>
-          ) : (
-            <motion.div
-              key="chat"
-              initial={{ rotate: 90, opacity: 0 }}
-              animate={{ rotate: 0, opacity: 1 }}
-              exit={{ rotate: -90, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="relative"
-            >
+      <AnimatePresence>
+        {!isOpen && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            onClick={() => setIsOpen(true)}
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
+            className="fixed bottom-6 right-6 z-[9999] w-14 h-14 rounded-full bg-signature-gradient text-white flex items-center justify-center shadow-[0_4px_20px_rgba(6,78,59,0.35)] hover:shadow-[0_8px_30px_rgba(6,78,59,0.5)] transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2"
+            aria-label="Open chatbot"
+          >
+            <div className="relative">
               <MessageSquare size={24} />
               {/* Pulsating notification dot */}
               <span className="absolute -top-1.5 -right-1.5 flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
               </span>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.button>
-    </div>
+            </div>
+          </motion.button>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
