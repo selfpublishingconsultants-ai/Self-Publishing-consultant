@@ -84,54 +84,93 @@ export const Hero = ({ initialTransactions = [] }: { initialTransactions?: any[]
 
     return (
         <section className="relative pt-32 pb-20 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6 text-center">
-                <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/5 border border-primary/10 mb-10">
-                    <span className="flex h-2 w-2 rounded-full bg-primary-light animate-ping" />
-                    <span className="text-[10px] font-black text-primary uppercase tracking-[0.3em]">Premium Publishing Infrastructure</span>
+            <div className="max-w-7xl mx-auto px-6">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center text-center lg:text-left">
+                    <div className="lg:col-span-7 flex flex-col items-center lg:items-start">
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/5 border border-primary/10 mb-6">
+                            <span className="flex h-2 w-2 rounded-full bg-primary-light animate-ping" />
+                            <span className="text-[9px] font-black text-primary uppercase tracking-[0.3em]">Premium Publishing Infrastructure</span>
+                        </div>
+
+                        <h1 className="text-5xl sm:text-6xl lg:text-[4rem] xl:text-[5.5rem] font-black tracking-tighter mb-6 leading-[0.9] text-primary">
+                            Designed to <br className="hidden sm:block" />
+                            Delight <span className="font-serif italic text-primary-light">Authors.</span>
+                        </h1>
+
+                        <motion.p
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+                            className="max-w-xl text-lg md:text-xl text-foreground/80 mb-8 font-medium leading-relaxed"
+                        >
+                            The distinction between a "book project" and a "global legacy" is infrastructure. Reach 180+ markets with <span className="text-primary-light font-bold underline decoration-primary-light/30 underline-offset-8">AI-optimized pathways</span> and absolute creative control.
+                        </motion.p>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                            className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto px-4 sm:px-0"
+                        >
+                            <Link
+                                href="/contact"
+                                className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2 group py-3 px-6"
+                            >
+                                Get Started Free <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                            <Link
+                                href="/schedule"
+                                className="glass w-full sm:w-auto px-8 py-3 rounded-full text-base font-bold hover:bg-primary/5 transition-all border-border shadow-sm text-foreground flex items-center justify-center"
+                            >
+                                Book a Demo
+                            </Link>
+                        </motion.div>
+                    </div>
+
+                    <div className="lg:col-span-5 w-full max-w-md mx-auto lg:max-w-full">
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                            className="bento-card p-6 sm:p-8 bg-white/60 backdrop-blur-3xl shadow-[0_32px_64px_-16px_rgba(20,184,166,0.2)] border border-primary/10 rounded-3xl relative overflow-hidden group text-left"
+                        >
+                            <div className="absolute top-0 right-0 w-40 h-40 bg-primary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none" />
+                            <div className="absolute bottom-0 left-0 w-32 h-32 bg-primary-light/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl pointer-events-none" />
+                            
+                            <div className="relative z-10">
+                                <h3 className="text-2xl font-black text-primary mb-2 tracking-tight">Request an Audit</h3>
+                                <p className="text-sm text-primary/70 mb-6 font-medium leading-relaxed">Let's discuss your manuscript and global distribution strategy.</p>
+                                
+                                <form className="space-y-3">
+                                    <div>
+                                        <label className="sr-only">Name</label>
+                                        <input type="text" placeholder="Your Name" className="w-full px-4 py-3 bg-white/70 border border-primary/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all text-primary placeholder:text-primary/40 font-semibold text-base shadow-inner" />
+                                    </div>
+                                    <div>
+                                        <label className="sr-only">Email</label>
+                                        <input type="email" placeholder="Email Address" className="w-full px-4 py-3 bg-white/70 border border-primary/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all text-primary placeholder:text-primary/40 font-semibold text-base shadow-inner" />
+                                    </div>
+                                    <div>
+                                        <label className="sr-only">Project Details</label>
+                                        <textarea rows={3} placeholder="Tell us about your book..." className="w-full px-4 py-3 bg-white/70 border border-primary/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all text-primary placeholder:text-primary/40 font-semibold text-base resize-none shadow-inner"></textarea>
+                                    </div>
+                                    <button type="button" className="w-full bg-primary hover:bg-primary-dark text-white py-3 rounded-xl flex items-center justify-center gap-2 group transition-all font-bold text-base mt-2 shadow-lg shadow-primary/25">
+                                        Submit Request <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                    </button>
+                                </form>
+                            </div>
+                        </motion.div>
+                    </div>
                 </div>
-
-                <h1 className="text-6xl sm:text-8xl lg:text-9xl font-black tracking-tighter mb-10 leading-[0.85] text-primary">
-                    Designed to <br />
-                    Delight <span className="font-serif italic text-primary-light">Authors.</span>
-                </h1>
-
-                <motion.p
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-                    className="max-w-3xl mx-auto text-xl md:text-2xl text-foreground/80 mb-14 font-medium leading-relaxed"
-                >
-                    The distinction between a "book project" and a "global legacy" is infrastructure. Reach 180+ markets with <span className="text-primary-light font-bold underline decoration-primary-light/30 underline-offset-8">AI-optimized pathways</span> and absolute creative control.
-                </motion.p>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 md:px-0"
-                >
-                    <Link
-                        href="/contact"
-                        className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2 group"
-                    >
-                        Get Started Free <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                    <Link
-                        href="/schedule"
-                        className="glass w-full sm:w-auto px-10 py-4 rounded-full text-base md:text-lg font-bold hover:bg-primary/5 transition-all border-border shadow-sm text-foreground flex items-center justify-center"
-                    >
-                        Book a Demo
-                    </Link>
-                </motion.div>
 
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
-                    className="relative mt-24 md:mt-32 mx-auto max-w-6xl px-2 sm:px-4 lg:px-8"
+                    className="relative mt-48 lg:mt-72 mx-auto max-w-6xl px-2 sm:px-4 lg:px-8"
                 >
                     {/* Creative illustration of kid sitting on the box edge */}
-                    <div className="absolute -top-[120px] md:-top-[200px] right-[10%] md:right-[15%] w-[150px] md:w-[250px] aspect-square z-20 pointer-events-none hover:rotate-2 transition-transform duration-500 origin-bottom">
+                    <div className="absolute -top-[120px] md:-top-[200px] left-[10%] md:left-[15%] w-[150px] md:w-[250px] aspect-square z-20 pointer-events-none hover:rotate-2 transition-transform duration-500 origin-bottom">
                         <Image 
                             src="/images/kid-sitting.png" 
                             alt="Kid sitting on the box" 

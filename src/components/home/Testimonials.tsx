@@ -8,39 +8,46 @@ const testimonials = [
         name: "L. K. Robinson",
         role: "Historical Fiction Author",
         text: "The distribution network is unmatched. My books were available globally in hours, not weeks.",
+        image: "https://randomuser.me/api/portraits/women/68.jpg"
     },
     {
         name: "James Chen",
         role: "Tech Thought Leader",
         text: "Automated royalties changed the game for our publishing house. Absolute transparency.",
+        image: "https://randomuser.me/api/portraits/men/32.jpg"
     },
     {
         name: "Sarah Jenkins",
         role: "Bestselling Novelist",
         text: "Exceptional design and market positioning. They understand how authors think.",
+        image: "https://randomuser.me/api/portraits/women/44.jpg"
     },
     {
         name: "Marcus Thorne",
         role: "Business Author",
         text: "The metadata optimization alone doubled my daily organic reach. Pure publishing engineering.",
+        image: "https://randomuser.me/api/portraits/men/46.jpg"
     },
     {
         name: "Elena Rossi",
         role: "Cookbook Author",
         text: "Professional formatting for complex layouts that actually work on Kindle and print.",
+        image: "https://randomuser.me/api/portraits/women/12.jpg"
     },
     {
         name: "Thomas Wright",
         role: "Biography Author",
         text: "A truly modern platform for writers. They handle the tech so I can handle the story.",
+        image: "https://randomuser.me/api/portraits/men/22.jpg"
     },
 ];
 
 const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
     <div className="bento-card relative flex flex-col justify-between h-[320px] w-[350px] p-10 bg-white/80 backdrop-blur-3xl shadow-2xl border border-primary/5 group mx-4 shrink-0 transition-transform duration-500 hover:scale-[1.02] hover:border-primary/20">
         <div className="relative z-10">
-            <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center mb-8 border border-primary/10">
-                <span className="text-2xl font-serif italic text-primary opacity-50">"</span>
+            <div className="w-16 h-16 rounded-full mb-8 border border-primary/10 overflow-hidden relative bg-primary/5 flex items-center justify-center shadow-md">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
             </div>
             <p className="text-primary/90 text-lg font-bold leading-relaxed tracking-tight line-clamp-4">
                 {testimonial.text}
