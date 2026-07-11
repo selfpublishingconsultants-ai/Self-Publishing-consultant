@@ -238,7 +238,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${playfair.variable} ${outfit.variable} bg-graph-gradient antialiased selection:bg-primary/20 selection:text-primary`}
+        className={`${inter.variable} ${playfair.variable} ${outfit.variable} overflow-x-hidden bg-graph-gradient antialiased selection:bg-primary/20 selection:text-primary`}
       >
         <JsonLd schema={[organizationSchema, websiteSchema]} />
 
