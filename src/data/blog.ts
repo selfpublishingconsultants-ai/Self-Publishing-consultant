@@ -33,12 +33,12 @@ export const blogPosts: BlogPost[] = [
   {
     category: "Publishing",
     title: "Developmental Editing Services for Authors: A Complete Guide to a Stronger Book",
-    excerpt: "Struggling with your manuscript? Get expert developmental editing services for authors in USA, UAE, Qatar & KSA. Free consultation available.",
-    date: "Jul 2, 2026",
-    readTime: "8 min read",
+    excerpt: "Professional developmental editing services for authors in the USA, UAE, Qatar, and KSA. Strengthen your manuscript's structure, pacing, and voice. Book a free assessment.",
+    date: "Jul 22, 2026",
+    readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=800&auto=format&fit=crop",
     iconSlug: "book-open",
-    slug: "developmental-editing-services-for-authors",
+    slug: "developmental-editing-services",
     author: {
         name: "M. Ali",
         avatar: "https://i.pravatar.cc/150?u=ali"
