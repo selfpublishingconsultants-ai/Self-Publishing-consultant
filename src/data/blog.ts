@@ -18,6 +18,20 @@ export type BlogPost = {
 export const blogPosts: BlogPost[] = [
   {
     category: "Publishing",
+    title: "How Substantive Editing Services in the UAE Help First-Time Authors",
+    excerpt: "Expert substantive editing services in the UAE for first-time authors. Strengthen plot, pacing, and clarity. Book a free consultation today.",
+    date: "Jul 27, 2026",
+    readTime: "8 min read",
+    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=800&auto=format&fit=crop",
+    iconSlug: "book-open",
+    slug: "substantive-editing-services-uae",
+    author: {
+        name: "M. Ali",
+        avatar: "https://i.pravatar.cc/150?u=ali"
+    }
+  },
+  {
+    category: "Publishing",
     title: "Book Launch Services for Authors Ready to Go Global",
     excerpt: "Professional book launch services for authors in the USA, UAE, Qatar, and KSA. Editing, distribution, and marketing strategy built for bestsellers.",
     date: "Jul 14, 2026",
