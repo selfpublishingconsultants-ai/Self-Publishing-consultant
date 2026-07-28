@@ -41,6 +41,11 @@ export type RelatedTool = {
     description: string;
 };
 
+export type WhyChooseUsItem = {
+    title: string;
+    description: string;
+};
+
 export type Service = {
     metaTitle?: string;
     metaDescription?: string;
@@ -65,6 +70,13 @@ export type Service = {
         a: string;
     }[];
     factDensity?: string[];
+    // Rich Content Sections
+    marketThesis?: string;
+    marketThesisSub?: string;
+    operationalProtocol?: string;
+    scaleStrategy?: string;
+    whyChooseUs?: WhyChooseUsItem[];
+    whoThisIsFor?: string[];
 };
 
 export const categories = [
@@ -366,13 +378,69 @@ export const services: Service[] = [
     // Marketing & Publicity Services
     {
         slug: "book-launch-strategy",
-        metaTitle: "Book Launch Strategy - Bestseller Roadmap Service",
-        metaDescription: "Comprehensive roadmap to build momentum and hit bestseller lists on launch day. Professional book launch strategy maximizing your release impact.",
+        metaTitle: "Book Launch Strategy - Bestseller Roadmap Service | Self-Publishing Consultant",
+        metaDescription: "A comprehensive book launch strategy to build pre-launch momentum, coordinate ARC reviews, and hit bestseller lists on release day.",
         title: "Book Launch Strategy",
         description: "A comprehensive roadmap to build momentum and hit bestseller lists on day one.",
         category: "Marketing & Publicity Services",
         iconName: "Rocket",
-        features: ["Timeline planning", "Launch team management", "Promo stacking"],
+        features: [
+            "Full pre-launch timeline planning",
+            "ARC team recruitment & review coordination",
+            "Promo stacking across Amazon Ads, BookBub, and newsletters",
+            "Category & keyword positioning for maximum visibility",
+            "Launch-week execution support"
+        ],
+        answerBlock: {
+            question: "How does our Book Launch Strategy service work?",
+            answer: "We build a complete pre-launch, launch-week, and post-launch plan tailored to your book and genre. That includes ARC recruitment and review coordination, retailer page optimization, category and keyword placement, and a promo stack timed to Amazon's algorithm-favored launch window, so your book has real momentum on day one instead of a quiet release."
+        },
+        marketThesis: "A book launch is the only marketing window where Amazon's algorithm actively favors you. For roughly 30 days after publication, new releases get visibility they'll never get again organically. Most authors waste this window they publish and hope. A planned launch turns it into a compounding advantage: pre-launch buyers rank the book from day one, ARC reviews land in the first week to clear the credibility threshold readers look for, launch-day promotion pushes the book through its favored-rank period, and a post-launch sustain plan holds the position once that favor fades.",
+        marketThesisSub: "We built this strategy for authors targeting the US, UAE, and KSA markets in three regions with different reader habits, review platforms, and retailer dynamics. A launch plan built only around US Amazon behavior misses real opportunity in the growing English-language reader base across the UAE and KSA, and we factor that into category selection, timing, and promotional channels.",
+        operationalProtocol: "We start with a full audit of your book's current assets, manuscript status, cover, metadata, and any existing reader list and benchmark your launch plan against what's currently working for comparable titles in your category. From there, we build a week-by-week countdown covering:\n\n• 90 to 30 days out — ARC team recruitment, cover reveal timing, retailer page setup, category and keyword selection\n• 30 to 7 days out — review outreach follow-ups, pre-order push, media and podcast pitching, promo scheduling\n• Launch week — coordinated review posting, Amazon Ads activation, newsletter and BookBub promo stacking\n• Post-launch (weeks 2-4) — ranking and keyword performance review, ad spend optimization, sustained visibility tactics\n\nWe never offer to pay or trade for reviews; platforms like Amazon detect and remove these, and it can put your account at risk. Every review generated through our process is genuine, reader-driven, and compliant with retailer policies.",
+        scaleStrategy: "Launch day isn't the finish line, it's the foundation. Our objective is to maximize your launch-week sales velocity while building an author platform and review base that keeps generating sales long after the initial push fades. That means:\n\n• Structuring your ARC campaign to build a reviewer list you can use again for future launches\n• Setting up ad campaigns you can scale intelligently once real performance data comes in\n• Positioning your book in categories where it can hold rank long-term, not just spike briefly\n• Creating a repeatable launch framework for your next book, so each release compounds on the last",
+        whyChooseUs: [
+            {
+                title: "Full-Service Coordination",
+                description: "We manage timeline, ARC outreach, and promo stacking so you're not juggling ten tools yourself"
+            },
+            {
+                title: "Global Market Reach",
+                description: "Launch strategies built for US, UAE, and KSA readers, not a single-region playbook"
+            },
+            {
+                title: "Data-Driven Decisions",
+                description: "Category, keyword, and promo choices based on real comp title and market research, not guesswork"
+            }
+        ],
+        whoThisIsFor: [
+            "First-time authors who want a real plan instead of 'publish and hope'",
+            "Authors with an existing reader list who want to convert it into launch-week momentum",
+            "Business authors and entrepreneurs who need a launch tied to a bigger brand or business goal",
+            "Authors relaunching a backlist title with a fresh strategy"
+        ],
+        faqs: [
+            {
+                q: "How far in advance should we start?",
+                a: "Ideally 8-12 weeks before your publication date, to allow enough time for ARC recruitment and pre-launch buildout."
+            },
+            {
+                q: "Do you pay for reviews or use review farms?",
+                a: "No. We only use compliant, reader-driven review strategies. Paid or traded reviews violate retailer policies and can get your book or account suspended."
+            },
+            {
+                q: "Is ad spend included in your fee?",
+                a: "Ad management is included in our service. The ad spend itself (typically variable depending on genre and target reach) is paid directly by you to the ad platform, and we coordinate timing and budget allocation around your launch window."
+            },
+            {
+                q: "Does this work outside the US market?",
+                a: "Yes. Our launch strategies are built with US, UAE, and KSA reader markets in mind, adjusting category, timing, and promotional channels accordingly."
+            },
+            {
+                q: "What happens after launch week?",
+                a: "We include a post-launch review covering ranking performance, keyword data, and ad optimization, so momentum doesn't drop off once launch week ends."
+            }
+        ],
         relatedTools: [
             { title: "Amazon Sales Calculator", slug: "amazon-sales-calculator", description: "Model your launch success on Amazon." },
             { title: "Book Description Generator", slug: "book-description-generator", description: "Perfect your launch-day sales copy." }

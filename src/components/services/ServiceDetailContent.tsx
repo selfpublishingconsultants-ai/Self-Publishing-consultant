@@ -194,8 +194,12 @@ export default function ServiceDetailContent({ service }: { service: Service }) 
             <div className="space-y-6">
               <h2 className="text-4xl font-bold tracking-tighter text-primary italic font-serif underline decoration-primary/10 underline-offset-8">Market Thesis & Impact</h2>
               <p className="text-xl text-foreground/70 leading-relaxed font-medium">
-                The 2026 publishing landscape demands institutional-grade precision. Our <strong>{service.title}</strong> service is
-                engineered to navigate the intersection of creative excellence and algorithmic discoverability, specifically addressing KDP's 2026 royalty shifts and the mandatory US Copyright AI disclosures.
+                {service.marketThesis || (
+                  <>
+                    The 2026 publishing landscape demands institutional-grade precision. Our <strong>{service.title}</strong> service is
+                    engineered to navigate the intersection of creative excellence and algorithmic discoverability, specifically addressing KDP's 2026 royalty shifts and the mandatory US Copyright AI disclosures.
+                  </>
+                )}
               </p>
               
               {/* Fact Density Block */}
@@ -213,25 +217,55 @@ export default function ServiceDetailContent({ service }: { service: Service }) 
                 </div>
               )}
 
-              <p className="text-lg text-foreground/60 leading-relaxed font-medium pt-8">
-                We utilize a proprietary "Dual-Layer" validation model. While our technical framework ensures 100% compliance with current Library of Congress and Amazon retail standards, our editorial leads maintain a relentless focus on the nuanced voice and psychological impact of your manuscript.
+              <p className="text-lg text-foreground/60 leading-relaxed font-medium pt-4">
+                {service.marketThesisSub || 'We utilize a proprietary "Dual-Layer" validation model. While our technical framework ensures 100% compliance with current Library of Congress and Amazon retail standards, our editorial leads maintain a relentless focus on the nuanced voice and psychological impact of your manuscript.'}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="p-10 rounded-3xl bg-primary/5 border border-primary/10 group hover:bg-primary/10 transition-colors">
                 <h3 className="text-xl font-bold mb-4 text-[#064e3b]">Operational Protocol</h3>
-                <p className="text-[#064e3b]/60 leading-relaxed font-medium">
-                  We begin with an exhaustive audit of your current assets to align your project with established market benchmarks for sales velocity.
+                <p className="text-[#064e3b]/70 leading-relaxed font-medium whitespace-pre-line text-sm">
+                  {service.operationalProtocol || "We begin with an exhaustive audit of your current assets to align your project with established market benchmarks for sales velocity."}
                 </p>
               </div>
               <div className="p-10 rounded-3xl bg-secondary/5 border border-secondary/10 group hover:bg-secondary/10 transition-colors">
                 <h3 className="text-xl font-bold mb-4 text-[#064e3b]">Scale Strategy</h3>
-                <p className="text-[#064e3b]/60 leading-relaxed font-medium">
-                  Our objective is to maximize your net royalty yield per unit while building a resilient author platform that outlasts retail trends.
+                <p className="text-[#064e3b]/70 leading-relaxed font-medium whitespace-pre-line text-sm">
+                  {service.scaleStrategy || "Our objective is to maximize your net royalty yield per unit while building a resilient author platform that outlasts retail trends."}
                 </p>
               </div>
             </div>
+
+            {/* Who This Is For Section */}
+            {service.whoThisIsFor && service.whoThisIsFor.length > 0 && (
+              <div className="p-10 rounded-3xl bg-emerald-950/5 border border-emerald-900/10 space-y-6">
+                <h3 className="text-2xl font-bold text-primary tracking-tighter italic font-serif">Who This Is For</h3>
+                <ul className="space-y-4">
+                  {service.whoThisIsFor.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-foreground/80 font-medium">
+                      <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* FAQs Section */}
+            {service.faqs && service.faqs.length > 0 && (
+              <div className="space-y-6 pt-4">
+                <h3 className="text-3xl font-bold text-primary tracking-tighter italic font-serif">Frequently Asked Questions</h3>
+                <div className="space-y-4">
+                  {service.faqs.map((faq, i) => (
+                    <div key={i} className="p-8 rounded-3xl bg-white border border-border shadow-sm space-y-3">
+                      <h4 className="font-bold text-lg text-primary">{faq.q}</h4>
+                      <p className="text-foreground/70 font-medium leading-relaxed text-sm">{faq.a}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Sidebar — 1/3 width */}
@@ -240,14 +274,14 @@ export default function ServiceDetailContent({ service }: { service: Service }) 
             <div className="p-10 rounded-[2.5rem] bg-[#022c22] text-white">
               <h3 className="text-2xl font-bold mb-8 tracking-tighter">Why Choose Us?</h3>
               <ul className="space-y-6">
-                {[
-                  { t: "Absolute Rights", d: "You maintain 100% control of your work." },
-                  { t: "Global Scale", d: "Reach 180+ markets instantly." },
-                  { t: "Data Driven", d: "Predictive market analytics." },
-                ].map((item) => (
-                  <li key={item.t} className="space-y-1">
-                    <p className="font-bold text-primary">{item.t}</p>
-                    <p className="text-white/40 text-sm leading-snug">{item.d}</p>
+                {(service.whyChooseUs || [
+                  { title: "Absolute Rights", description: "You maintain 100% control of your work." },
+                  { title: "Global Scale", description: "Reach 180+ markets instantly." },
+                  { title: "Data Driven", description: "Predictive market analytics." },
+                ]).map((item, i) => (
+                  <li key={i} className="space-y-1">
+                    <p className="font-bold text-primary">{item.title}</p>
+                    <p className="text-white/40 text-sm leading-snug">{item.description}</p>
                   </li>
                 ))}
               </ul>
