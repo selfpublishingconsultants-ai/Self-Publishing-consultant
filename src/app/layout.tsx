@@ -142,7 +142,8 @@ const organizationSchema = {
     "name": "M. Ali",
     "jobTitle": "Lead Publishing Consultant",
     "description": "With over a decade of experience in self-publishing, M. Ali has guided hundreds of authors through the complex landscape of KDP and IngramSpark distribution, focusing on absolute rights retention and market-ready production standards.",
-    "url": `${SITE_URL}/team`,
+    // "url": `${SITE_URL}/team`,
+    "url": SITE_URL,
     "sameAs": [
       "https://www.linkedin.com/in/selfpublishingconsultant",
       "https://twitter.com/selfpubconsult"

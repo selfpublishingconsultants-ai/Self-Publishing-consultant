@@ -56,9 +56,12 @@ const teamMembers = [
 ];
 
 export default function TeamPage() {
+    return null;
+    /*
     return (
         <main className="min-h-screen bg-transparent">
-            {/* Hero Section */}
+            {// Hero Section
+            }
             <section className="relative pt-48 pb-24 overflow-hidden text-center bg-transparent">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-grid -z-10 opacity-30" />
                 <div className="max-w-4xl mx-auto px-6">
@@ -93,7 +96,8 @@ export default function TeamPage() {
                 </div>
             </section>
 
-            {/* Team Grid */}
+            {// Team Grid
+            }
             <section className="py-32 max-w-7xl mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                     {teamMembers.map((member, index) => (
@@ -145,7 +149,8 @@ export default function TeamPage() {
                 </div>
             </section>
 
-            {/* Joining Section */}
+            {// Joining Section
+            }
             <section className="py-32 bg-[#022c22] text-white relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full bg-grid-white opacity-5 -z-0" />
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -171,4 +176,5 @@ export default function TeamPage() {
             </section>
         </main>
     );
+    */
 }

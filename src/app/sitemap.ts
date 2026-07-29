@@ -19,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/pricing",
     "/portfolio",
     "/about",
-    "/team",
+    // "/team",
     "/contact",
     "/schedule",
     "/privacy",
