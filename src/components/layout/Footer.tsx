@@ -78,11 +78,11 @@ export default function Footer() {
                         <div className="space-y-6">
                             <div className="group">
                                 <p className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-1 group-hover:text-secondary transition-colors">Phone & WhatsApp</p>
-                                <a href="tel:+447922656521" className="text-sm font-bold text-white hover:text-secondary transition-colors">+1(888)921 3331</a>
+                                <a href="tel:+18889213331" className="text-sm font-bold text-white hover:text-secondary transition-colors">+1(888)921 3331</a>
                             </div>
                             <div className="group">
                                 <p className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-1 group-hover:text-secondary transition-colors">Email Inquiry</p>
-                                <a href="mailto:info@selfpublishingconsultant.com" className="text-sm font-bold text-white hover:text-secondary transition-colors">selfpublishingconsultants@gmail.com</a>
+                                <a href="mailto:info@selfpublishingconsultant.com" className="text-sm font-bold text-white hover:text-secondary transition-colors">info@selfpublishingconsultant.com</a>
                             </div>
                         </div>
                         <div>
@@ -90,7 +90,7 @@ export default function Footer() {
                             <div className="flex gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
                                 <MapPin className="w-5 h-5 text-secondary shrink-0" />
                                 <p className="text-sm text-white/60 leading-relaxed font-medium">
-                                    31 Gourdon Ct,< br />
+                                    31 Gourdon Ct,<br />
                                     Lake St. Louis, MO 63367
                                 </p>
                             </div>

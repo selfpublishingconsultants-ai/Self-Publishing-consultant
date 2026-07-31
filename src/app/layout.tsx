@@ -176,21 +176,25 @@ const organizationSchema = {
   contactPoint: [
     {
       "@type": "ContactPoint",
-      telephone: "+44-7922-656521",
+      telephone: "+1-888-921-3331",
       contactType: "customer service",
-      areaServed: "GB",
+      areaServed: "US",
       availableLanguage: "English",
     },
     {
       "@type": "ContactPoint",
-      email: "selfpublishingconsultants@gmail.com",
+      email: "info@selfpublishingconsultant.com",
       contactType: "customer support",
       availableLanguage: "English",
     },
   ],
   address: {
     "@type": "PostalAddress",
-    addressCountry: "GB",
+    streetAddress: "31 Gourdon Ct",
+    addressLocality: "Lake St. Louis",
+    addressRegion: "MO",
+    postalCode: "63367",
+    addressCountry: "US",
   },
   sameAs: [
     "https://www.facebook.com/selfpublishingconsultant",

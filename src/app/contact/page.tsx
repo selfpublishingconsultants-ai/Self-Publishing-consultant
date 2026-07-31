@@ -72,9 +72,9 @@ export default function Contact() {
                     <div className="lg:col-span-12 xl:col-span-5 space-y-8 order-2 lg:order-1">
                         <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-1 gap-6">
                             {[
-                                { icon: <MapPin />, title: "HQ Command", lines: ["100 Innovation Drive", "San Francisco, CA 94111"], color: "bg-primary" },
-                                { icon: <Phone />, title: "Direct Lines", lines: ["+44 7922 656521 (WhatsApp)", "1-800-PUBLISH (US)"], color: "bg-primary-light" },
-                                { icon: <Mail />, title: "Comms Portal", lines: ["selfpublishingconsultants@gmail.com", "strategist@spc.io"], color: "bg-primary" },
+                                { icon: <MapPin />, title: "HQ Command", lines: ["31 Gourdon Ct", "Lake St. Louis, MO 63367"], color: "bg-primary" },
+                                { icon: <Phone />, title: "Direct Lines", lines: ["+1(888)921 3331"], color: "bg-primary-light" },
+                                { icon: <Mail />, title: "Comms Portal", lines: ["info@selfpublishingconsultant.com"], color: "bg-primary" },
                             ].map((item, i) => (
                                 <motion.div 
                                     key={i} 
