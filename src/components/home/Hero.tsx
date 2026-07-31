@@ -5,11 +5,40 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, BookOpen, CheckCircle2, Globe, Zap, TrendingUp, Quote } from "lucide-react";
 import Image from "next/image";
+import { submitContactForm } from "@/app/actions";
 
 export const Hero = ({ initialTransactions = [] }: { initialTransactions?: any[] }) => {
+    const [status, setStatus] = React.useState<"idle" | "loading" | "success" | "error">("idle");
     const [transactions, setTransactions] = React.useState<any[]>(initialTransactions);
     const [isLoading, setIsLoading] = React.useState(initialTransactions.length === 0);
     const [lastSync, setLastSync] = React.useState<string>("");
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setStatus("loading");
+        
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+        
+        const data = {
+            name: formData.get("hero-name") as string,
+            email: formData.get("hero-email") as string,
+            genre: "Audit Request",
+            message: formData.get("hero-message") as string,
+        };
+        
+        try {
+            const result = await submitContactForm(data);
+            if (result.success) {
+                setStatus("success");
+                form.reset();
+            } else {
+                setStatus("error");
+            }
+        } catch (error) {
+            setStatus("error");
+        }
+    };
 
     const [quoteIndex, setQuoteIndex] = React.useState(0);
     const quotes = [
@@ -141,23 +170,71 @@ export const Hero = ({ initialTransactions = [] }: { initialTransactions?: any[]
                                 <h3 className="text-2xl font-black text-primary mb-2 tracking-tight">Request an Audit</h3>
                                 <p className="text-sm text-primary/70 mb-6 font-medium leading-relaxed">Let's discuss your manuscript and global distribution strategy.</p>
                                 
-                                <form className="space-y-3">
-                                    <div>
-                                        <label className="sr-only">Name</label>
-                                        <input type="text" placeholder="Your Name" className="w-full px-4 py-3 bg-white/70 border border-primary/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all text-primary placeholder:text-primary/40 font-semibold text-base shadow-inner" />
+                                {status === "success" ? (
+                                    <div className="py-8 text-center relative z-10">
+                                        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-primary/20">
+                                            <CheckCircle2 className="w-8 h-8 text-primary" />
+                                        </div>
+                                        <h4 className="text-xl font-bold text-primary mb-2">Audit Requested!</h4>
+                                        <p className="text-sm text-primary/70 font-medium">Thank you! Our publishing strategists will review your request and reach out shortly.</p>
+                                        <button 
+                                            onClick={() => setStatus("idle")} 
+                                            className="mt-6 text-xs font-bold uppercase tracking-widest text-primary hover:underline"
+                                        >
+                                            Submit another request
+                                        </button>
                                     </div>
-                                    <div>
-                                        <label className="sr-only">Email</label>
-                                        <input type="email" placeholder="Email Address" className="w-full px-4 py-3 bg-white/70 border border-primary/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all text-primary placeholder:text-primary/40 font-semibold text-base shadow-inner" />
-                                    </div>
-                                    <div>
-                                        <label className="sr-only">Project Details</label>
-                                        <textarea rows={3} placeholder="Tell us about your book..." className="w-full px-4 py-3 bg-white/70 border border-primary/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all text-primary placeholder:text-primary/40 font-semibold text-base resize-none shadow-inner"></textarea>
-                                    </div>
-                                    <button type="button" className="w-full bg-primary hover:bg-primary-dark text-white py-3 rounded-xl flex items-center justify-center gap-2 group transition-all font-bold text-base mt-2 shadow-lg shadow-primary/25">
-                                        Submit Request <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                    </button>
-                                </form>
+                                ) : (
+                                    <form onSubmit={handleSubmit} className="space-y-3">
+                                        <div>
+                                            <label htmlFor="hero-name" className="sr-only">Name</label>
+                                            <input 
+                                                id="hero-name"
+                                                name="hero-name"
+                                                type="text" 
+                                                required
+                                                placeholder="Your Name" 
+                                                className="w-full px-4 py-3 bg-white/70 border border-primary/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all text-primary placeholder:text-primary/40 font-semibold text-base shadow-inner" 
+                                            />
+                                        </div>
+                                        <div>
+                                            <label htmlFor="hero-email" className="sr-only">Email</label>
+                                            <input 
+                                                id="hero-email"
+                                                name="hero-email"
+                                                type="email" 
+                                                required
+                                                placeholder="Email Address" 
+                                                className="w-full px-4 py-3 bg-white/70 border border-primary/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all text-primary placeholder:text-primary/40 font-semibold text-base shadow-inner" 
+                                            />
+                                        </div>
+                                        <div>
+                                            <label htmlFor="hero-message" className="sr-only">Project Details</label>
+                                            <textarea 
+                                                id="hero-message"
+                                                name="hero-message"
+                                                rows={3} 
+                                                required
+                                                placeholder="Tell us about your book..." 
+                                                className="w-full px-4 py-3 bg-white/70 border border-primary/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all text-primary placeholder:text-primary/40 font-semibold text-base resize-none shadow-inner"
+                                            ></textarea>
+                                        </div>
+                                        <button 
+                                            type="submit" 
+                                            disabled={status === "loading"}
+                                            className="w-full bg-primary hover:bg-primary-dark text-white py-3 rounded-xl flex items-center justify-center gap-2 group transition-all font-bold text-base mt-2 shadow-lg shadow-primary/25 disabled:opacity-50 disabled:cursor-not-allowed"
+                                        >
+                                            {status === "loading" ? "Submitting..." : (
+                                                <>
+                                                    Submit Request <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                                </>
+                                            )}
+                                        </button>
+                                        {status === "error" && (
+                                            <p className="text-red-500 text-xs font-bold text-center mt-2">Failed to submit request. Please try again.</p>
+                                        )}
+                                    </form>
+                                )}
                             </div>
                         </motion.div>
                     </div>
