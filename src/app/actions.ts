@@ -30,22 +30,25 @@ export async function scheduleMeeting(formData: {
     project: string;
 }) {
     const { name, email, date, time, project } = formData;
-    const ADMIN_EMAILS = "muhammadalisoomr110@gmail.com, khalid8sharpk@gmail.com, aliahk.developer@gmail.com, selfpublishingconsultants@gmail.com";
+    const TO_EMAIL = "selfpublishingconsultants@gmail.com";
+    const CC_EMAILS = "aliahk.developer@gmail.com, khalid8sharpk@gmail.com, muhammadalisoomr110@gmail.com";
 
-    // In a real production app, you would use env variables for these
-    // For now, setting up the transporter
-    // Note: To use Gmail, you'd typically need an "App Password"
+    const smtpUser = process.env.SMTP_USER || process.env.EMAIL_USER || "selfpublishingconsultants@gmail.com";
+    const smtpPass = process.env.SMTP_PASS || process.env.EMAIL_PASS;
+    const isDevMode = !smtpPass || smtpPass === "your-app-password";
+
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: process.env.EMAIL_USER || "your-email@gmail.com",
-            pass: process.env.EMAIL_PASS || "your-app-password",
+            user: smtpUser,
+            pass: smtpPass || "",
         },
     });
 
     const mailOptions = {
-        from: `"Self-Publishing Consultant" <${process.env.EMAIL_USER}>`,
-        to: ADMIN_EMAILS,
+        from: `"Self-Publishing Consultant" <${smtpUser}>`,
+        to: TO_EMAIL,
+        cc: CC_EMAILS,
         subject: `New Meeting Scheduled: ${name}`,
         text: `
             New Meeting Request:
@@ -70,7 +73,7 @@ export async function scheduleMeeting(formData: {
     };
 
     try {
-        if (!process.env.EMAIL_USER || process.env.EMAIL_USER === "your-email@gmail.com") {
+        if (isDevMode) {
             console.log("[DEV MODE] Simulated sending email locally. Payload:", { name, email, date, time, project });
             await sendToGoogleSheet({ type: "Meeting", name, email, date, time, project });
             return { success: true };
@@ -92,19 +95,25 @@ export async function submitTicket(formData: {
     message: string;
 }) {
     const { name, email, category, priority, subject, message } = formData;
-    const ADMIN_EMAILS = "muhammadalisoomr110@gmail.com, khalid8sharpk@gmail.com, aliahk.developer@gmail.com, selfpublishingconsultants@gmail.com";
+    const TO_EMAIL = "selfpublishingconsultants@gmail.com";
+    const CC_EMAILS = "aliahk.developer@gmail.com, khalid8sharpk@gmail.com, muhammadalisoomr110@gmail.com";
+
+    const smtpUser = process.env.SMTP_USER || process.env.EMAIL_USER || "selfpublishingconsultants@gmail.com";
+    const smtpPass = process.env.SMTP_PASS || process.env.EMAIL_PASS;
+    const isDevMode = !smtpPass || smtpPass === "your-app-password";
 
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: process.env.EMAIL_USER || "your-email@gmail.com",
-            pass: process.env.EMAIL_PASS || "your-app-password",
+            user: smtpUser,
+            pass: smtpPass || "",
         },
     });
 
     const mailOptions = {
-        from: `"Support Protocol" <${process.env.EMAIL_USER}>`,
-        to: ADMIN_EMAILS,
+        from: `"Support Protocol" <${smtpUser}>`,
+        to: TO_EMAIL,
+        cc: CC_EMAILS,
         subject: `[TICKET-LOG] ${priority}: ${subject}`,
         text: `
             Support Ticket Ingested:
@@ -134,7 +143,7 @@ export async function submitTicket(formData: {
     };
 
     try {
-        if (!process.env.EMAIL_USER || process.env.EMAIL_USER === "your-email@gmail.com") {
+        if (isDevMode) {
             console.log("[DEV MODE] Simulated ingesting support ticket locally. Payload:", { name, email, category, priority, subject, message });
             await sendToGoogleSheet({ type: "Ticket", name, email, category, priority, subject, message });
             return { success: true };
@@ -155,19 +164,25 @@ export async function submitContactForm(formData: {
     message: string;
 }) {
     const { name, email, genre, message } = formData;
-    const ADMIN_EMAILS = "muhammadalisoomr110@gmail.com, khalid8sharpk@gmail.com, aliahk.developer@gmail.com, selfpublishingconsultants@gmail.com";
+    const TO_EMAIL = "selfpublishingconsultants@gmail.com";
+    const CC_EMAILS = "aliahk.developer@gmail.com, khalid8sharpk@gmail.com, muhammadalisoomr110@gmail.com";
+
+    const smtpUser = process.env.SMTP_USER || process.env.EMAIL_USER || "selfpublishingconsultants@gmail.com";
+    const smtpPass = process.env.SMTP_PASS || process.env.EMAIL_PASS;
+    const isDevMode = !smtpPass || smtpPass === "your-app-password";
 
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: process.env.EMAIL_USER || "your-email@gmail.com",
-            pass: process.env.EMAIL_PASS || "your-app-password",
+            user: smtpUser,
+            pass: smtpPass || "",
         },
     });
 
     const mailOptions = {
-        from: `"Direct Client Inquiry" <${process.env.EMAIL_USER}>`,
-        to: ADMIN_EMAILS,
+        from: `"Direct Client Inquiry" <${smtpUser}>`,
+        to: TO_EMAIL,
+        cc: CC_EMAILS,
         replyTo: email,
         subject: `New Inquiry from ${name} [${genre}]`,
         text: `
@@ -211,7 +226,7 @@ export async function submitContactForm(formData: {
     };
 
     try {
-        if (!process.env.EMAIL_USER || process.env.EMAIL_USER === "your-email@gmail.com") {
+        if (isDevMode) {
             console.log("[DEV MODE] Simulated sending contact inquiry locally. Payload:", { name, email, genre, message });
             await sendToGoogleSheet({ type: "Contact Form", name, email, genre, message });
             return { success: true };
