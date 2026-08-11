@@ -160,13 +160,75 @@ export const services: Service[] = [
     },
     {
         slug: "substantive-editing",
-        metaTitle: "Substantive Editing - Clarity & Coherence Services",
-        metaDescription: "Improve clarity, flow, and coherence at paragraph and sentence level. Professional substantive editing service trusted by independent authors and small publishers.",
+        metaTitle: "Substantive Editing - Clarity & Coherence Services | Self-Publishing Consultant",
+        metaDescription: "Improve clarity, flow, and coherence at the paragraph and sentence level with professional substantive editing trusted by independent authors.",
         title: "Substantive Editing",
         description: "Improve the clarity, flow, and coherence of your writing at the paragraph and sentence level.",
         category: "Editorial & Content Services",
         iconName: "Edit3",
-        features: ["Clarity enhancement", "Flow improvement", "Logical consistency"]
+        features: [
+            "Paragraph-level rewrites where prose feels flat, cluttered, or unclear",
+            "Improved flow and logical consistency from paragraph to paragraph",
+            "Voice and tone consistency maintained across the entire manuscript",
+            "Sentence rhythm and pacing refined at the line level",
+            "Word choice, clarity, and redundancy addressed throughout",
+            "A manuscript that reads the way it was meant to sound, not just grammatically correct"
+        ],
+        answerBlock: {
+            question: "How does our Substantive Editing service work?",
+            answer: "An editor works through your manuscript paragraph by paragraph, refining clarity, flow, and logical consistency while preserving how you actually sound. This is different from developmental editing, which addresses whole-manuscript structure, substantive editing is about how the writing itself reads once that structure is already in place. You receive an edited manuscript with tracked changes and notes on any recurring patterns worth watching for."
+        },
+        marketThesis: "Readers rarely notice good prose, but they always notice clunky prose. A manuscript with strong bones can still lose readers if sentences are repetitive, transitions feel abrupt, or the voice shifts inconsistently from chapter to chapter. Substantive editing is where a manuscript stops reading like a draft and starts reading like a finished book.",
+        marketThesisSub: "This stage works best once developmental editing has confirmed the structure is solid, polishing paragraphs in a chapter that still needs restructuring wastes your budget. Once substantive editing is complete, most manuscripts move into our editing and proofreading service for the final mechanical pass.",
+        operationalProtocol: "1. Manuscript intake & editor match — you submit your manuscript and we match it with an editor suited to your genre and voice.\n2. Sample edit — for longer projects, we edit a sample chapter first so you can confirm the editor's approach matches your voice.\n3. Full substantive pass — your editor works paragraph by paragraph through the complete manuscript, addressing clarity, flow, and consistency.\n4. Tracked changes delivery — you receive the edited manuscript with all changes tracked, so you can review, accept, or query every edit.\n5. Query resolution — a defined window to work through any editor queries or your own follow-up questions.",
+        scaleStrategy: "Our objective is a manuscript that sounds like its best possible version of you, and a process that trains your ear for prose that reads well going forward. That means:\n\n• Preserving your voice while sharpening clarity, never smoothing a manuscript into generic prose\n• Flagging recurring patterns so you carry the improvement into future writing\n• Sequencing edits correctly so this happens after structure is confirmed, not before\n• Preparing the manuscript for what's next so it moves cleanly into final editing and proofreading",
+        whyChooseUs: [
+            {
+                title: "Absolute Rights",
+                description: "you maintain 100% control of your work throughout the editing process"
+            },
+            {
+                title: "Global Scale",
+                description: "editing informed by what reads well for readers across US, UAE, and KSA markets"
+            },
+            {
+                title: "Data-Driven",
+                description: "editorial decisions grounded in real market and reader research, not guesswork"
+            }
+        ],
+        whoThisIsFor: [
+            "Authors whose manuscript is structurally solid but reads roughly at the paragraph or sentence level",
+            "Authors moving out of developmental editing and into the next stage of polish",
+            "Authors who've self-edited extensively and want a professional pass before final proofreading",
+            "Authors who want their natural voice sharpened, not replaced with a generic editorial tone"
+        ],
+        faqs: [
+            {
+                q: "How is this different from developmental editing?",
+                a: "Developmental editing addresses structure, plot, pacing, and argument at the whole-manuscript level. Substantive editing works at the paragraph and sentence level, clarity, flow, and consistency, once that structure is already in place."
+            },
+            {
+                q: "How long does it take?",
+                a: "Most substantive editing projects take 3-5 weeks depending on manuscript length."
+            },
+            {
+                q: "Will this change my voice?",
+                a: "No. We edit to sharpen your voice, not replace it. Every change is tracked so you can see and approve exactly what shifted."
+            },
+            {
+                q: "Do I need developmental editing first?",
+                a: "If your manuscript hasn't been structurally reviewed, we recommend it. Editing paragraphs in a section that still needs restructuring means paying to polish text you may end up cutting."
+            },
+            {
+                q: "What do I receive at the end?",
+                a: "A fully edited manuscript with all changes tracked, plus notes on recurring patterns worth watching for in your own writing going forward."
+            }
+        ],
+        relatedTools: [
+            { title: "Amazon Sales Calculator", slug: "amazon-sales-calculator", description: "Estimate potential sales and volume on Amazon." },
+            { title: "Book Description Generator", slug: "book-description-generator", description: "Draft compelling sales copy with AI assistance." },
+            { title: "Royalty Calculator", slug: "royalty-calculator", description: "Calculate your estimated earnings per sale." }
+        ]
     },
     {
         slug: "copyediting",
@@ -242,13 +304,75 @@ export const services: Service[] = [
     },
     {
         slug: "proofreading",
-        metaTitle: "Proofreading - Final Error Checking Before Publishing",
-        metaDescription: "Final comprehensive typo and error check before print or digital distribution. Professional proofreading ensuring publication-ready manuscripts.",
+        metaTitle: "Proofreading - Final Error Checking Before Publishing | Self-Publishing Consultant",
+        metaDescription: "A final, comprehensive typo and error check before print or digital distribution, ensuring your manuscript is genuinely publication-ready.",
         title: "Proofreading",
         description: "The final typo and error check before your book goes to print or digital distribution.",
         category: "Editorial & Content Services",
         iconName: "Search",
-        features: ["Typo hunting", "Punctuation check", "Final polish"]
+        features: [
+            "Typographical errors caught and corrected across your fully formatted manuscript",
+            "Formatting verification — margins, headers, page numbers, and running heads checked",
+            "Widow and orphan lines, awkward page breaks, and spacing errors flagged",
+            "A final read against your copyedited manuscript to catch anything introduced during layout",
+            "Table of contents, chapter titles, and front and back matter checked for accuracy",
+            "A print-ready or upload-ready file, confirmed error-free before it goes live"
+        ],
+        answerBlock: {
+            question: "How does our Proofreading service work?",
+            answer: "A proofreader reviews your fully formatted manuscript, the version laid out for print or ebook, catching typos, formatting inconsistencies, and any errors introduced during design or layout. This is the last check before publication, focused on the finished file rather than the raw manuscript, and you receive a marked-up copy of every correction plus confirmation the file is ready to publish."
+        },
+        marketThesis: "Proofreading catches a different category of error than every stage before it. Layout and formatting introduce their own mistakes, a word dropped during a last-minute revision, a page number that's off after a chapter was added, a paragraph indent that broke during export, and these slip through even a clean copyedit because they happen after the manuscript was already corrected. Skipping this step means readers find the errors instead, and typos are one of the most commonly cited complaints in reader reviews.",
+        marketThesisSub: "This is the last stop before publication, which is why it only happens after copyediting and once the manuscript is in its final laid-out form. Proofreading a manuscript that's still being copyedited means checking a file that's guaranteed to change again.",
+        operationalProtocol: "1. File intake — you submit the final formatted manuscript, print layout or ebook file, along with the copyedited version for reference.\n2. Full proofreading pass — your proofreader reads the complete formatted file, flagging typos, formatting inconsistencies, and layout errors.\n3. Cross-check against copyedit — the proofread version is compared against the copyedited manuscript to catch anything introduced during layout.\n4. Front and back matter review — table of contents, chapter titles, headers, and any front or back matter are checked for accuracy.\n5. Final sign-off — you receive a marked-up copy of every correction and confirmation the file is ready to publish.",
+        scaleStrategy: "Proofreading is a small investment protecting everything that came before it. Our objective is a file you can publish with total confidence. That means:\n\n• Catching layout-introduced errors that no earlier editing stage could have found\n• Protecting your review scores since typos are one of the most commonly cited complaints in reader reviews\n• Confirming print or upload readiness before you commit to a print run or hit publish\n• Closing the loop on the full editorial process so every stage from manuscript to final file has been professionally handled",
+        whyChooseUs: [
+            {
+                title: "Absolute Rights",
+                description: "you maintain 100% control of your work throughout the review process"
+            },
+            {
+                title: "Global Scale",
+                description: "proofreaders familiar with formatting conventions across US, UAE, and KSA print and digital markets"
+            },
+            {
+                title: "Data-Driven",
+                description: "a review process built around the errors that most consistently affect reader reviews"
+            }
+        ],
+        whoThisIsFor: [
+            "Authors with a fully formatted, laid-out manuscript ready for final review before publishing",
+            "Authors who've completed copyediting and are preparing to go to print or upload for ebook",
+            "Authors who made last-minute changes after copyediting and want confirmation nothing broke",
+            "Authors who want a final safeguard before committing to a print run"
+        ],
+        faqs: [
+            {
+                q: "How is this different from copyediting?",
+                a: "Copyediting corrects grammar, style, and consistency in the manuscript itself. Proofreading happens after formatting, checking the final laid-out file for typos and layout errors that copyediting couldn't have caught."
+            },
+            {
+                q: "How long does it take?",
+                a: "Most proofreading passes take 1-2 weeks depending on manuscript length."
+            },
+            {
+                q: "Do you proofread both print and ebook formats?",
+                a: "Yes, we proofread print layouts and ebook files, each has its own common formatting issues we check for specifically."
+            },
+            {
+                q: "What if I make changes after proofreading?",
+                a: "Any changes made after proofreading should go through a quick re-check, even small edits can introduce new formatting or typo errors."
+            },
+            {
+                q: "What do I receive at the end?",
+                a: "A marked-up copy showing every correction made, plus confirmation that your file is ready for print or upload."
+            }
+        ],
+        relatedTools: [
+            { title: "Amazon Sales Calculator", slug: "amazon-sales-calculator", description: "Estimate potential sales and volume on Amazon." },
+            { title: "Book Description Generator", slug: "book-description-generator", description: "Draft compelling sales copy with AI assistance." },
+            { title: "Royalty Calculator", slug: "royalty-calculator", description: "Calculate your estimated earnings per sale." }
+        ]
     },
     {
         slug: "fact-checking",
@@ -947,15 +1071,74 @@ export const services: Service[] = [
     },
     {
         slug: "social-media-management",
-        metaTitle: "Social Media Management - Author Platform Growth",
-        metaDescription: "Grow your author platform and engage readers across social media networks. Professional social media management building author authority and audience.",
+        metaTitle: "Social Media Management - Author Platform Growth | Self-Publishing Consultant",
+        metaDescription: "Grow your author platform with consistent content, profile optimization, and reader engagement across the social networks your audience actually uses.",
         title: "Social Media Management",
         description: "Grow your author platform and engage with your readers across all major social networks.",
         category: "Marketing & Publicity Services",
         iconName: "Share2",
-        features: ["Content creation", "Ad management", "Profile optimization"],
+        features: [
+            "Author profiles optimized for discoverability and a consistent first impression",
+            "A content calendar built around your genre, your books, and your voice",
+            "Regular content creation, from posts and captions to short-form video concepts",
+            "Active engagement with readers and comments, not just one-way posting",
+            "Performance tracking so content decisions follow what readers respond to",
+            "A growing, engaged author platform that supports every future launch"
+        ],
+        answerBlock: {
+            question: "How does our Social Media Management service work?",
+            answer: "We start by optimizing your author profiles so they make a strong first impression, then build a content calendar around your genre, your books, and the platforms your readers actually use. From there we handle regular content creation and posting, engage with readers and comments, and track what's performing so the strategy keeps adjusting to what actually works, rather than running on a fixed plan indefinitely."
+        },
+        marketThesis: "Readers increasingly discover authors before they discover a specific book, through short-form video, community engagement, and an author's ongoing presence rather than a single retail listing. An author with no social presence is invisible to that discovery path entirely, no matter how strong the book itself is.\n\nBut social media only builds a platform if it's consistent. Sporadic posting, long gaps between content, and one-way promotion without engagement all read as an inactive or disinterested account, which readers and platform algorithms both deprioritize. The accounts that build real reader relationships post regularly and actually respond when readers show up.",
+        marketThesisSub: "Different platforms suit different genres and different authors, so we treat platform selection as a strategic choice rather than a rule to spread thin across everything. We also treat social media as an ongoing platform-building effort rather than a launch-only push, since the accounts that support a strong launch are the ones with an engaged following built up well before release day.",
+        operationalProtocol: "1. Platform & audience review — we identify which platforms your target readers actually spend time on.\n2. Profile optimization — we refine your bio, imagery, and links so profiles make a strong first impression.\n3. Content strategy & calendar — we build a content plan around your genre, books, and voice.\n4. Content creation & posting — we produce and schedule regular content, from captions to short-form video concepts.\n5. Engagement — we respond to comments and messages so the account reads as active, not automated.\n6. Performance review — we track what's resonating and adjust the content strategy accordingly.",
+        scaleStrategy: "Our objective is a platform that grows steadily and actually converts followers into readers, not vanity metrics with no reader relationship behind them. That means:\n\n• Choosing platforms deliberately — depth on the two or three platforms your readers use beats a thin presence everywhere\n• Posting consistently — a sustainable regular cadence builds more trust than sporadic bursts of activity\n• Engaging, not just broadcasting — replying to readers is what turns a follower into an actual fan\n• Letting performance guide the strategy — doubling down on content formats and topics that readers actually respond to",
+        whyChooseUs: [
+            {
+                title: "Absolute Rights",
+                description: "you maintain 100% ownership and control of your social accounts throughout"
+            },
+            {
+                title: "Global Scale",
+                description: "content and platform strategy informed by social media conventions across US, UAE, and KSA audiences"
+            },
+            {
+                title: "Data-Driven",
+                description: "content decisions grounded in performance data on what readers actually engage with"
+            }
+        ],
+        whoThisIsFor: [
+            "Authors with little or no existing social media presence who want to start building one",
+            "Authors with accounts that have gone stagnant or inconsistent",
+            "Authors who find content creation time-consuming and want it handled consistently",
+            "Authors approaching a launch who want an engaged platform in place before release day"
+        ],
+        faqs: [
+            {
+                q: "Which social platforms do you manage?",
+                a: "We work across the major platforms authors use, including Instagram, TikTok, Facebook, and others, and help decide which ones actually fit your genre and audience rather than spreading effort across all of them."
+            },
+            {
+                q: "Will I need to approve content before it's posted?",
+                a: "We can work either way, whether you want to review and approve content in advance or give us more autonomy over posting. We'll set this up based on your preference."
+            },
+            {
+                q: "Do you handle replying to comments and messages?",
+                a: "Yes, engagement is part of the service, since an account that only posts without responding reads as inactive to both readers and platform algorithms."
+            },
+            {
+                q: "How is this different from your Advertising Management service?",
+                a: "Social Media Management covers organic content, posting, and engagement. Advertising Management covers paid campaigns on platforms like Amazon and Meta. The two can work together, but they're separate services."
+            },
+            {
+                q: "How long before I see meaningful platform growth?",
+                a: "It varies by genre, platform, and starting point, but social media growth is typically gradual and compounding rather than immediate, which is why we treat it as an ongoing effort rather than a short campaign."
+            }
+        ],
         relatedTools: [
-            { title: "Hashtag Generator", slug: "hashtag-generator", description: "Generate viral hashtags for your book promos." }
+            { title: "Hashtag Generator", slug: "hashtag-generator", description: "Generate relevant hashtags for your book promos." },
+            { title: "Book Description Generator", slug: "book-description-generator", description: "Draft compelling sales copy with AI assistance." },
+            { title: "Amazon Sales Calculator", slug: "amazon-sales-calculator", description: "Estimate potential sales and volume on Amazon." }
         ]
     },
     {
@@ -1042,13 +1225,75 @@ export const services: Service[] = [
     },
     {
         slug: "review-sourcing",
-        metaTitle: "Review Sourcing - ARC Management for Book Launches",
-        metaDescription: "Manage Advance Reader Copies (ARCs) to secure honest reviews. Professional ARC sourcing driving book credibility and sales on launch day.",
+        metaTitle: "Review Sourcing - ARC Management for Book Launches | Self-Publishing Consultant",
+        metaDescription: "Manage Advance Reader Copy distribution to reach engaged readers and secure honest reviews in place for your book's launch day.",
         title: "Review Sourcing (ARC)",
-        description: "Manage Advance Reader Copies (ARCs) to secure honest reviews for your launch.",
+        description: "Manage Advance Reader Copies to reach engaged readers and have honest reviews ready for your launch.",
         category: "Marketing & Publicity Services",
         iconName: "Star",
-        features: ["ARC distribution", "Review hunting", "Reader engagement"]
+        features: [
+            "An ARC team recruited from readers who actually read in your genre",
+            "Advance copies distributed on a clear timeline that lands reviews around launch day",
+            "Follow-up and reminders to keep reader engagement and review completion high",
+            "Reviews sourced in line with Amazon's and other platforms' guidelines, never bought or manipulated",
+            "A tracked, organized record of who received a copy and who's posted a review",
+            "A meaningful base of honest reviews in place for the day your book goes live"
+        ],
+        answerBlock: {
+            question: "How does our Review Sourcing (ARC) service work?",
+            answer: "We recruit readers who genuinely read in your book's genre, distribute advance copies on a timeline built around your launch date, and follow up to keep engagement high through to a posted review. Every review we source is honest and unpaid, in line with Amazon's and other platforms' guidelines, since reviews that don't hold up to scrutiny put your listing at risk. The result is a track record of genuine reader response in place before your book goes live."
+        },
+        marketThesis: "A book with zero reviews on launch day reads as untested to both browsing readers and retail algorithms, even if the writing itself is excellent. Reviews are one of the strongest trust signals a new release can carry, and having a meaningful number in place from day one measurably changes how readers respond to a first impression.\n\nThis only works if the reviews are real. Retailers actively police incentivized or manipulated reviews, and a listing flagged for review manipulation can lose reviews, lose visibility, or in serious cases get suspended entirely. We source reviews the way retailers intend: readers get a free advance copy in exchange for their honest opinion, positive or not, with no payment or pressure attached to the rating itself.",
+        marketThesisSub: "ARC distribution runs on a timeline that ends at or just before launch, so it needs to start weeks ahead, once your final manuscript and cover are ready. We treat it as a coordinated campaign with its own recruitment, follow-up, and tracking, not a one-off email blast, because reader follow-through on posting a review is the step most campaigns lose.",
+        operationalProtocol: "1. Book & timeline review — we confirm your launch date and how many ARC readers we're aiming to recruit and retain.\n2. Reader recruitment — we source ARC readers who read in your specific genre, not a generic reader list.\n3. ARC distribution — advance copies go out on a schedule that gives readers enough time to finish before launch.\n4. Engagement & follow-up — we send reminders and check-ins to keep readers on track toward posting a review.\n5. Review tracking — we track who's received a copy and who's posted, so nothing falls through the cracks.\n6. Launch-day report — you receive a summary of ARC participation and reviews secured heading into launch.",
+        scaleStrategy: "Our objective is a launch day that doesn't start from zero, backed by reviews that hold up to any scrutiny a retailer or reader might apply. That means:\n\n• Recruiting genre-matched readers — reviews from readers who actually read your genre carry more weight and read as more credible\n• Keeping every review honest and unpaid — protecting your listing from the platform risk that comes with manipulated reviews\n• Chasing follow-through, not just sign-ups — a large ARC list means little if most readers never finish or post\n• Timing distribution around your launch — reviews landing in the days around launch carry more algorithmic weight than ones trickling in over months",
+        whyChooseUs: [
+            {
+                title: "Absolute Rights",
+                description: "you maintain 100% control of your manuscript and who receives an advance copy"
+            },
+            {
+                title: "Global Scale",
+                description: "reader recruitment and review conventions informed by practices across US, UAE, and KSA markets"
+            },
+            {
+                title: "Data-Driven",
+                description: "recruitment and follow-up built around what actually gets readers from copy to posted review"
+            }
+        ],
+        whoThisIsFor: [
+            "Authors with a finished manuscript approaching a launch date",
+            "Authors launching without an existing reader list or ARC team of their own",
+            "Authors who've tried ARC distribution before and struggled with low review follow-through",
+            "Authors building a series who want a repeatable ARC process for every release"
+        ],
+        faqs: [
+            {
+                q: "Are these reviews paid for or guaranteed positive?",
+                a: "No. ARC readers receive a free advance copy in exchange for their honest opinion, whatever that opinion is. We never pay for reviews or pressure readers toward a particular rating, since that violates retailer policies and puts your listing at risk."
+            },
+            {
+                q: "How many reviews can I expect from an ARC campaign?",
+                a: "It varies by genre, ARC list size, and how many readers actually finish the book, but not every reader who receives a copy will post a review. We focus on maximizing follow-through, not promising a fixed number."
+            },
+            {
+                q: "When should ARC distribution start before launch?",
+                a: "We typically recommend starting several weeks ahead of your launch date, giving readers enough time to finish the book and post a review before or right around release."
+            },
+            {
+                q: "Do I need my own list of readers to start?",
+                a: "No. We can recruit ARC readers on your behalf, though if you already have a mailing list or reader group, we'll incorporate them into the campaign as well."
+            },
+            {
+                q: "What happens if a reader leaves a negative review?",
+                a: "That's part of an honest review process, and it's expected. A mix of genuine reviews, including some critical ones, reads as more credible to both readers and retailers than an unnaturally uniform set of five-star ratings."
+            }
+        ],
+        relatedTools: [
+            { title: "Amazon Sales Calculator", slug: "amazon-sales-calculator", description: "Estimate potential sales and volume on Amazon." },
+            { title: "Book Description Generator", slug: "book-description-generator", description: "Draft compelling sales copy with AI assistance." },
+            { title: "Royalty Calculator", slug: "royalty-calculator", description: "Calculate your estimated earnings per sale." }
+        ]
     },
     {
         slug: "advertising-management",
