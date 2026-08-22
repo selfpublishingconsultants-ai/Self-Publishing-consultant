@@ -3,7 +3,7 @@ import { Inter, Playfair_Display, Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import ChatbotWidget from "@/components/layout/ChatbotWidget";
+import ChatWidget from "@/components/layout/ChatWidget";
 import { JsonLd } from "@/components/JsonLd";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
@@ -288,7 +288,7 @@ export default function RootLayout({
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />
-        <ChatbotWidget />
+        <ChatWidget />
       </body>
       <GoogleAnalytics gaId="G-4NR1V8FZKS" />
     </html>
